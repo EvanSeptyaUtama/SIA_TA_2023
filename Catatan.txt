@@ -1,0 +1,51 @@
+
+=============================================
+Data Siswa/Siswa STARGEN
+-------------------------------------------
+Foto siswa = string @
+Nama Lengkap = string @
+Tempat Lahir = string @
+Tanggal Lahir = date @
+Jenis Kelamin (pilihan) = string/select @
+Agama (Pilihan) = string/select @
+Anak ke- = string @
+Suku = string@
+Jumlah Saudara = int@
+Cita-cita = string@
+Hobi = string@
+No Telp(ortu) = string@
+Tempat tinggal = string/select "bersama orang tua, bersama wali"@
+Alamat = string @
+RT/RW = string
+DESA/KELURAHAN = string
+Kecamatan = string
+Kode Pos = string
+===================================================================
+Data Sejarah
+-------------------------------------------------------------------
+judul_sejarah = string
+penjelasan_singkat = text
+penjelasan_lengkap = text
+gambar_sejarah = string
+===================================================================
+Data Visi-Misi
+-------------------------------------------------------------------
+visi = string
+misi = string
+gambar_visi_misi = string
+===================================================================
+Data Susunan Organisasi 
+-------------------------------------------------------------------
+judul = string
+gambar_organisasi = string
+nama = string
+jabatan = string
+===================================================================
+Data Informasi Akademik 
+-------------------------------------------------------------------
+hari = string
+tanggal = date
+informasi = string
+keterangan = text
+gambar = string
+===================================================================
