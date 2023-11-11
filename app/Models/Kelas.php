@@ -10,7 +10,7 @@ class Kelas extends Model
     use HasFactory;
     protected $table = 'kelas';
     protected $fillable = [
-        'nama_kelas'
+        'nama_kelas','pengajar_id'
     ];
 
     //Memiliki banyak absen
@@ -22,7 +22,7 @@ class Kelas extends Model
     //Memiliki banyak jadwal mengajar guru
     public function jadwal_mengajar_guru()
     {
-        return $this->hasMany(JadwalMengajarGuru::class, 'kelas_id', 'mata_pelajaran_id', 'guru_id');
+        return $this->hasMany(JadwalMengajarGuru::class, 'kelas_id', 'mata_pelajaran_id');
     }
 
     //Memiliki banyak absen
@@ -35,9 +35,9 @@ class Kelas extends Model
     {
         return $this->hasMany(Siswa::class, 'kelas_id','id');
     }
-
-    public function gurus()
+    public function pengajar()
     {
-        return $this->hasOne(Guru::class, 'kelas_id','id');
-    }
+        return $this->hasOne(Pengajar::class, 'kelas_id','id');
+    } 
+
 }

@@ -19,8 +19,9 @@ return new class extends Migration
             $table->time('waktu_mulai_guru');
             $table->time('waktu_selesai_guru');
             $table->string('keterangan_guru');
-            //Foreign key : table guru
-            $table->foreignId('guru_id')->constrained('gurus')->cascadeOnUpdate()->cascadeOnDelete();
+            //Foreign key : table Pengajar
+            $table->unsignedBigInteger('pengajar_id')->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreign('pengajar_id')->references('id')->on('pengajars');
             //Foreign key : table kelas
             $table->foreignId('kelas_id')->constrained('kelas')->cascadeOnUpdate()->cascadeOnDelete();
             //Foreign key : table mata pelajaran

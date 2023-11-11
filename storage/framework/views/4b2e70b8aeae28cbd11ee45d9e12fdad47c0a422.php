@@ -34,7 +34,7 @@
                             <div class="card-header text-center"><?php echo e(__('Data Absen Guru')); ?></div>
                         
                             <div class="card-body">
-                                <form action="<?php echo e(route('update_absen_guru', $data_absen_guru)); ?>" method="post" enctype="multipart/form-data">
+                                <form action="<?php echo e(route('update_absen_guru', $data_absen_guru->id)); ?>" method="post" enctype="multipart/form-data">
                                     <?php echo method_field('patch'); ?>
                                     <?php echo csrf_field(); ?> 
                                     <div class="row mb-2">
@@ -68,11 +68,11 @@
                                     </div>
                                     <!--Foreign key : Table Siswa--->
                                     <div class="row mb-2">
-                                        <label class="col-sm-2 col-label-form">Guru</label>
+                                        <label class="col-sm-2 col-label-form">Pengajar</label>
                                         <div class="col-sm-10">
-                                            <select name="guru_id" class="form-control" class="form-control" >
-                                                <?php $__currentLoopData = $edit_guru; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                    <option value="<?php echo e($item->id); ?>" <?php echo e($data_absen_guru->guru_id == $item->id ? 'selected':''); ?>><?php echo e($item->nama_guru); ?></option>
+                                            <select name="pengajar_id" class="form-control" class="form-control" >
+                                                <?php $__currentLoopData = $edit_pengajar; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                    <option value="<?php echo e($item->id); ?>" <?php echo e($data_absen_guru->pengajar_id == $item->id ? 'selected':''); ?>><?php echo e($item->nama_pengajar); ?></option>
                                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                             </select>
                                         </div>

@@ -57,7 +57,7 @@
             <div class="card-header text-center">{{ __('Edit Data Pengajar') }}</div>
             
             <div class="card-body">
-                <form action="{{ route('update_guru', $data_guru->id) }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('update_guru', $data_guru) }}" method="post" enctype="multipart/form-data">
                     @method('patch')
                     @csrf
                     <div class="row mb-2">
@@ -73,6 +73,12 @@
                         <div class="col-sm-10">
                             <input type="text" name="nama_guru" class="form-control"
                                 value="{{ $data_guru->nama_guru }}"></div>
+                    </div>
+                    <div class="row mb-4">
+                        <label class="col-sm-2 col-label-form" for="foto_guru">Foto</label>
+                        <div class="col-sm-10">
+                           <input class="form-control rounded mt-1" id="foto_guru" type="file" name="foto_guru">
+                        </div>
                     </div>
                     <div class="row mb-2">
                         <label class="col-sm-2 col-label-form">Telepon</label>
@@ -97,17 +103,17 @@
                         </div>
                     </div>
                     <!-----foreign key table kelas-->
-                    <div class="row mb-2">
+                    <!-- <div class="row mb-2">
                         <label class="col-sm-2 col-label-form">Kelas</label>
                         <div class="col-sm-10">
                             <select name="kelas_id" class="form-control" class="form-control" >
                                 <option value="">-Bukan guru-</option>
-                                @foreach ($edit_kelas as $item)
+                                @foreach ($kelas_edit as $item)
                                     <option value="{{$item->id}}" {{$data_guru->kelas_id == $item->id ? 'selected':'' }}>{{$item->nama_kelas}}</option>
                                 @endforeach
                             </select>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="row mb-2">
                         <label class="col-sm-2 col-label-form">Tempat Lahir</label>
                         <div class="col-sm-10">
@@ -120,17 +126,6 @@
                         <div class="col-sm-10">
                             <input  type="date" name="ttl" class="form-control"
                             value="{{ $data_guru->ttl }}">
-                        </div>
-                    </div>
-                    <!-- @if($data_guru->foto_siswa != '')
-                                                <img src="{{url('storage/Siswa/'. $data_siswa->foto_siswa) }}" class="rounded mb-2 w-full h-full" alt="" height="200px">    
-                                            @else
-                                                <img src="{{asset('pi_assets/images/profile.jpg') }}" class="rounded mb-2 w-full h-full" alt="" height="200px">    
-                                            @endif -->
-                    <div class="row mb-4">
-                        <label class="col-sm-2 col-label-form">Foto</label>
-                        <div class="col-sm-10">
-                            <input class="form-control rounded mt-1" type="file" name="foto_guru">
                         </div>
                     </div>
                     <div class="row mb-2">

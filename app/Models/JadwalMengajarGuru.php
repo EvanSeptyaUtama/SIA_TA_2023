@@ -2,21 +2,23 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Kelas;
+use App\Models\Pengajar;
+use App\Models\MataPelajaran;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class JadwalMengajarGuru extends Model
 {
     use HasFactory;
     protected $table = 'jadwal_mengajar_gurus';
     protected $fillable = [
-        'tanggal', 'waktu_mulai', 'waktu_selesai', 'hari', 'kelas_id', 'mata_pelajaran_id', 'guru_id'
+        'tanggal', 'waktu_mulai', 'waktu_selesai', 'hari', 'kelas_id', 'mata_pelajaran_id', 'pengajar_id'
     ];
-
-    //Memiliki banyak guru
-    public function gurus()
+    //Memiliki 1 pengajar
+    public function pengajar()
     {
-        return $this->belongsTo(Guru::class, 'guru_id');
+        return $this->belongsTo(Pengajar::class);
     }
 
     //Memiliki banyak kelas

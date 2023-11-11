@@ -25,30 +25,30 @@
                 </div>
             </div>
             
-         <!---Alert-->
-         <div class="row">
-            <div class="col-md-12">
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <div class="alert-title"><h4>Maaf!</h4></div>
-                            Terdapat kesalahan dalam input data
-                        <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                        </ul>
-                    </div> 
+            <!---Alert-->
+            <div class="row">
+                <div class="col-md-12">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <div class="alert-title"><h4>Maaf!</h4></div>
+                                Terdapat kesalahan dalam input data
+                            <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                            </ul>
+                        </div> 
+                    @endif
+
+                @if (session('success'))
+                    <div class="alert alert-success">{{ session('success') }}</div>
                 @endif
 
-              @if (session('success'))
-                <div class="alert alert-success">{{ session('success') }}</div>
-              @endif
-
-              @if (session('error'))
-                <div class="alert alert-danger">{{ session('error') }}</div>
-              @endif
+                @if (session('error'))
+                    <div class="alert alert-danger">{{ session('error') }}</div>
+                @endif
+                </div>
             </div>
-        </div>
         </div>
         
         <!---Bagian Body : table dan pagination-->
@@ -61,7 +61,7 @@
                             <th>Mulai</th>
                             <th>Selesai</th>
                             <th>Hari</th>
-                            <th>Guru</th>
+                            <th>Pengajar</th>
                             <th>Kelas</th>
                             <th>Mata Pelajaran</th>
                             <th width="150px">Aksi</th>
@@ -75,7 +75,7 @@
                             <td>{{$data->waktu_selesai}}</td>
                             <td>{{$data->hari}}</td>
                             <td>
-                                {{$data->gurus->nama_guru}}
+                                {{$data->pengajar->nama_pengajar}}
                             </td>
                             <td>
                                 {{$data->kelas->nama_kelas}}

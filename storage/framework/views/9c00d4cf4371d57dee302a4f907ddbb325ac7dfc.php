@@ -26,7 +26,7 @@
                 <div class="row mb-3">
                     <label class="col-sm-3 col-label-form">Alamat</label>
                     <div class="col-sm-9">
-                        <input class="form-control" type="text" name="alamat_siswa" placeholder="Alamat" class="form-control">
+                        <textarea class="form-control" type="text" name="alamat_siswa" placeholder="Alamat" rows="4" class="form-control"></textarea>
                     </div>
                 </div>
 

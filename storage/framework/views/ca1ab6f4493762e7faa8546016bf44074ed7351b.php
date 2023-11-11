@@ -33,12 +33,12 @@
                                     <div class="row">
                                         <div class="col">
                                             <div class=""><span class="text-secondary">Keterangan</span> <h4><strong><?php echo e($data_absen_guru->keterangan_guru); ?></strong></h4></div>
-                                            <div class=""><span class="text-secondary">Tanggal Absen</span> <h4><strong><?php echo e($data_absen_guru->tanggal_absen_guru->format('l d F Y')); ?></strong></h4></div>
-                                            <div class=""><span class="text-secondary">Waktu Mulai</span> <h4><strong><?php echo e($data_absen_guru->waktu_mulai_guru->format('h:i A')); ?></strong></h4></div>
-                                            <div class=""><span class="text-secondary">Waktu Selesai</span> <h4><strong><?php echo e($data_absen_guru->waktu_selesai_guru->format('h:i A')); ?></strong></h4></div>
+                                            <div class=""><span class="text-secondary">Tanggal Absen</span> <h4><strong><?php echo e($data_absen_guru->tanggal_absen_guru); ?></strong></h4></div>
+                                            <div class=""><span class="text-secondary">Waktu Mulai</span> <h4><strong><?php echo e($data_absen_guru->waktu_mulai_guru); ?></strong></h4></div>
+                                            <div class=""><span class="text-secondary">Waktu Selesai</span> <h4><strong><?php echo e($data_absen_guru->waktu_selesai_guru); ?></strong></h4></div>
                                         </div>
                                         <div class="col">
-                                            <div class=""><span class="text-secondary">Nama Guru</span> <h4><strong><?php echo e($data_absen_guru->gurus->nama_guru); ?></strong></h4></div>
+                                            <div class=""><span class="text-secondary">Nama Pengajar</span> <h4><strong><?php echo e($data_absen_guru->pengajar->nama_pengajar); ?></strong></h4></div>
                                             <div class=""><span class="text-secondary">Kelas</span> <h4><strong><?php echo e($data_absen_guru->kelas->nama_kelas); ?></strong></h4></div>
                                             <div class=""><span class="text-secondary">Mata Pelajaran</span> <h4><strong><?php echo e($data_absen_guru->mata_pelajarans->mata_pelajaran); ?></strong></h4></div>
                                         </div>

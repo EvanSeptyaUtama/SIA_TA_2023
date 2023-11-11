@@ -8,7 +8,7 @@
             <th><strong>Mulai</strong></th>
             <th><strong>Selesai</strong></th>
             <th><strong>Keterangan</strong></th>
-            <th><strong>Guru</strong></th>
+            <th><strong>Pengajar</strong></th>
             <th><strong>Kelas</strong></th>
             <th><strong>Mata Pelajaran</strong></th>
           </tr>
@@ -21,7 +21,7 @@
             <td>{{$data->waktu_selesai->format('h:i A')}}</td>
               <td>{{$data->keterangan_guru}}</td>
               <td>
-                  {{$data->gurus->nama_guru}}
+                  {{$data->pengajar->nama_pengajar}}
               </td>
               <td>
                   {{$data->kelas->nama_kelas}}

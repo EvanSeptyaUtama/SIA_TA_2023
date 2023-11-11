@@ -53,14 +53,10 @@
                         <div>
                             <a
                                 class="btn btn-primary" 
-                                href="<?php echo e(route('tambah_siswa')); ?>"
+                                href=""
                                 data-bs-toggle="modal" 
                                 data-bs-target="#dataSiswa"><i class="fa fa-plus"></i> Data Siswa</a>
                             <a class="btn btn-success" href="<?php echo e(route('eksport_excel_siswa')); ?>">Eksport Excel</a>
-                            <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                Import Excel
-                            </button>
                         </div>
                         <br>
                             <table id="example" class="table table-striped nowrap" style="width:100%">
@@ -68,9 +64,9 @@
                                     <tr>
                                         <th>NISN</th>
                                         <th>Nama</th>
-                                        <th>Alamat</th>
+                                        <th>Foto</th>
                                         <th>Jenis Kelamin</th>
-                                        <th>Aksi</th>
+                                        <th width="200px">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -78,7 +74,7 @@
                                         <tr>
                                             <td><?php echo e($data->nisn); ?></td>
                                             <td><?php echo e($data->nama_siswa); ?></td>
-                                            <td><?php echo e($data->alamat_siswa); ?></td>
+                                            <td><img src="<?php echo e(asset('storage/Siswa/'. $data->foto_siswa)); ?>" class="img-index_admin" alt="" >  </td>
                                             <td><?php echo e($data->jenis_kelamin); ?></td>
                                             <td class="text-center">
                                                 <div class="container">
@@ -117,9 +113,7 @@
             </div>
             <!-- Modal Tambah Data-->
             <?php echo $__env->make('admin.Master.biodata_siswa.tambah_data_siswa', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-            <!-- Modal Import Data-->
-            <?php echo $__env->make('admin.Master.biodata_siswa.import_data_siswa', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-        </div>
+         </div>
     </div>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layouts.admin_layouts.app_admin', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\project-TA\laravel9\sistem_informasi_akademik\resources\views/admin/Master/biodata_siswa/data_siswa.blade.php ENDPATH**/ ?>

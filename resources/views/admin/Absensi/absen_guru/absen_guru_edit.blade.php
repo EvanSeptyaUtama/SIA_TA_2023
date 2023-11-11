@@ -34,7 +34,7 @@
                             <div class="card-header text-center">{{ __('Data Absen Guru') }}</div>
                         
                             <div class="card-body">
-                                <form action="{{ route('update_absen_guru', $data_absen_guru) }}" method="post" enctype="multipart/form-data">
+                                <form action="{{ route('update_absen_guru', $data_absen_guru->id) }}" method="post" enctype="multipart/form-data">
                                     @method('patch')
                                     @csrf 
                                     <div class="row mb-2">
@@ -68,11 +68,11 @@
                                     </div>
                                     <!--Foreign key : Table Siswa--->
                                     <div class="row mb-2">
-                                        <label class="col-sm-2 col-label-form">Guru</label>
+                                        <label class="col-sm-2 col-label-form">Pengajar</label>
                                         <div class="col-sm-10">
-                                            <select name="guru_id" class="form-control" class="form-control" >
-                                                @foreach ($edit_guru as $item)
-                                                    <option value="{{$item->id}}" {{$data_absen_guru->guru_id == $item->id ? 'selected':'' }}>{{$item->nama_guru}}</option>
+                                            <select name="pengajar_id" class="form-control" class="form-control" >
+                                                @foreach ($edit_pengajar as $item)
+                                                    <option value="{{$item->id}}" {{$data_absen_guru->pengajar_id == $item->id ? 'selected':'' }}>{{$item->nama_pengajar}}</option>
                                                 @endforeach
                                             </select>
                                         </div>

@@ -3,7 +3,7 @@
 @section('title', 'Halaman Utama')
 @section('content')
     <div class="m-2">
-        <div class="container">
+        <div class="container-fluid">
             <h2 class="text-center"><strong>DETAIL BIODATA SISWA</strong></h2>
             <!-----Breadcrumbs--->
             <div class="row">
@@ -32,12 +32,8 @@
                                 <div class="row justify-content-between">
                                     <div class="col-md-4 text-center">
                                         <div class="d-flex justify-content-center">
-                                            @if($data_siswa->foto_siswa != '')
-                                                <img src="{{url('storage/Siswa/'. $data_siswa->foto_siswa) }}" class="rounded mb-2 w-full h-full" alt="" height="200px">    
-                                            @else
-                                                <img src="{{asset('pi_assets/images/profile.jpg') }}" class="rounded mb-2 w-full h-full" alt="" height="200px">    
-                                            @endif
-                                        </div>
+                                            <img src="{{url('storage/Siswa/'. $data_siswa->foto_siswa) }}" class="rounded mb-2 w-full h-full" alt="" height="200px">    
+                                         </div>
                                         
                                         <div class="row mt-1">
                                             <div class="col-md-4 text-secondary">Nama</div>
@@ -88,11 +84,14 @@
                                             <div class="col-md-5 text-secondary">Nomor Telepon</div>
                                             <div class="col-md-7"><h5>{{$data_siswa->no_telp}}</h5></div> 
                                         <hr>
+                                            <div class="col-md-5 text-secondary">Anak ke-</div>
+                                            <div class="col-md-7"><h5>{{$data_siswa->anak_ke ? $data_siswa->anak_ke : '....'}}</h5></div> 
+                                        <hr>
                                             <div class="col-md-5 text-secondary">Suku</div>
-                                            <div class="col-md-7"><h5>{{$data_siswa->suku}}</h5></div> 
+                                            <div class="col-md-7"><h5>{{$data_siswa->suku ? $data_siswa->suku : '....'}}</h5></div> 
                                         <hr>
                                             <div class="col-md-5 text-secondary">Jumlah Saudara</div>
-                                            <div class="col-md-7"><h5>{{$data_siswa->jumlah_saudara}}</h5></div> 
+                                            <div class="col-md-7"><h5>{{ $data_siswa->jumlah_saudara ? $data_siswa->jumlah_saudara : '....' }}</h5></div> 
                                         <hr>
                                             <div class="col-md-5 text-secondary">Cita - Cita</div>
                                             <div class="col-md-7"><h5>{{$data_siswa->cita_cita}}</h5></div> 

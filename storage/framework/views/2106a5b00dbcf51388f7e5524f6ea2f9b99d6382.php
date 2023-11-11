@@ -56,13 +56,13 @@
                                         <input type="text" name="hari"  value="<?php echo e($data_jadwal_mengajar_guru->hari); ?>" placeholder="Contoh : Senin, Selasa, dll..." class="form-control">
                                     </div>
                                 </div>
-                                 <!--Foreign key : Table Guru--->
+                                 <!--Foreign key : Table Pengajar--->
                                 <div class="row mb-2">
-                                    <label class="col-sm-2 col-label-form">Guru</label>
+                                    <label class="col-sm-2 col-label-form">Pengajar</label>
                                     <div class="col-sm-10">
-                                        <select name="guru_id" class="form-control" >
-                                            <?php $__currentLoopData = $edit_guru; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                <option value="<?php echo e($item->id); ?>" <?php echo e($data_jadwal_mengajar_guru->guru_id == $item->id ? 'selected':''); ?>><?php echo e($item->nama_guru); ?></option>
+                                        <select name="pengajar_id" class="form-control" >
+                                            <?php $__currentLoopData = $edit_pengajar; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                <option value="<?php echo e($item->id); ?>" <?php echo e($data_jadwal_mengajar_guru->pengajar_id == $item->id ? 'selected':''); ?>><?php echo e($item->nama_pengajar); ?></option>
                                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                         </select>
                                     </div>
@@ -126,8 +126,8 @@
                                 </div>
                                 <hr>
                                 <div class="row">
-                                    <label for="">Guru</label>
-                                    <div class=""><h4><strong><?php echo e($data_jadwal_mengajar_guru->gurus->nama_guru); ?></strong></h4></div>
+                                    <label for="">Pengajar</label>
+                                    <div class=""><h4><strong><?php echo e($data_jadwal_mengajar_guru->pengajar->nama_pengajar); ?></strong></h4></div>
                                 </div>
                                 <div class="row">
                                     <label for="">Kelas</label>

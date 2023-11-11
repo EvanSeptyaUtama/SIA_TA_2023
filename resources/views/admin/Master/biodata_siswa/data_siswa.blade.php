@@ -53,14 +53,10 @@
                         <div>
                             <a
                                 class="btn btn-primary" 
-                                href="{{route('tambah_siswa')}}"
+                                href=""
                                 data-bs-toggle="modal" 
                                 data-bs-target="#dataSiswa"><i class="fa fa-plus"></i> Data Siswa</a>
                             <a class="btn btn-success" href="{{route('eksport_excel_siswa')}}">Eksport Excel</a>
-                            <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                Import Excel
-                            </button>
                         </div>
                         <br>
                             <table id="example" class="table table-striped nowrap" style="width:100%">
@@ -68,9 +64,9 @@
                                     <tr>
                                         <th>NISN</th>
                                         <th>Nama</th>
-                                        <th>Alamat</th>
+                                        <th>Foto</th>
                                         <th>Jenis Kelamin</th>
-                                        <th>Aksi</th>
+                                        <th width="200px">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -78,7 +74,7 @@
                                         <tr>
                                             <td>{{$data->nisn}}</td>
                                             <td>{{$data->nama_siswa}}</td>
-                                            <td>{{$data->alamat_siswa}}</td>
+                                            <td><img src="{{asset('storage/Siswa/'. $data->foto_siswa) }}" class="img-index_admin" alt="" >  </td>
                                             <td>{{$data->jenis_kelamin}}</td>
                                             <td class="text-center">
                                                 <div class="container">
@@ -117,8 +113,6 @@
             </div>
             <!-- Modal Tambah Data-->
             @include('admin.Master.biodata_siswa.tambah_data_siswa')
-            <!-- Modal Import Data-->
-            @include('admin.Master.biodata_siswa.import_data_siswa')
-        </div>
+         </div>
     </div>
 @endsection

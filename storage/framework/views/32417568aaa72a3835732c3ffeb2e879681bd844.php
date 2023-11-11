@@ -32,11 +32,11 @@
                         <!--Input Foreign key : table guru dan table kelas dan table mata pelajaran-->
                         <div class="col-md-4 mb-2">
                           <div class="form-group ">
-                            <label class="col-sm-2 col-label-form"><strong>Guru</strong></label>
-                            <select name="guru_id" class="form-control border-dark" class="col-sm-10" >
-                              <option value="">- Pilih Guru -</option> 
-                                <?php $__currentLoopData = $gurus; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <option value="<?php echo e($item->id); ?>"><?php echo e($item->nama_guru); ?></option>
+                            <label class="col-sm-3 col-label-form"><strong>Pengajar</strong></label>
+                            <select name="pengajar_id" class="form-control border-dark" class="col-sm-10" >
+                              <option value="">- Pilih Pengajar -</option> 
+                                <?php $__currentLoopData = $pengajar; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <option value="<?php echo e($item->id); ?>"><?php echo e($item->nama_pengajar); ?></option>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </select>
                           </div>
@@ -128,7 +128,7 @@
                               <th>Mulai</th>
                               <th>Selesai</th>
                               <th>Keterangan</th>
-                              <th>Guru</th>
+                              <th>Pengajar</th>
                               <th>Kelas</th>
                               <th>Mata Pelajaran</th>
                               <th>Aksi</th>
@@ -137,12 +137,12 @@
                       <tbody>
                           <?php $__currentLoopData = $data_absen_guru; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <tr class="text-center">
-                              <td><?php echo e($data->tanggal_absen_guru->format('l d F Y')); ?></td>
-                              <td><?php echo e($data->waktu_mulai_guru->format('h:i A')); ?></td>
-                              <td><?php echo e($data->waktu_selesai_guru->format('h:i A')); ?></td>
+                              <td><?php echo e($data->tanggal_absen_guru); ?></td>
+                              <td><?php echo e($data->waktu_mulai_guru); ?></td>
+                              <td><?php echo e($data->waktu_selesai_guru); ?></td>
                                 <td><?php echo e($data->keterangan_guru); ?></td>
                                 <td>
-                                    <?php echo e($data->gurus->nama_guru); ?>
+                                    <?php echo e($data->pengajar->nama_pengajar); ?>
 
                                 </td>
                                 <td>
@@ -158,7 +158,7 @@
                                         <div class="row">
                                           <!---Tombol tampil data secara detail--->
                                           <div class="col">
-                                            <form action="<?php echo e(route('tampil_absen_guru', $data)); ?>" method="get">
+                                            <form action="<?php echo e(route('tampil_absen_guru', $data->id)); ?>" method="get">
                                                 <button type="submit" class="btn btn-sm btn-secondary mt-2">
                                                     Detail
                                                 </button>
@@ -166,7 +166,7 @@
                                           </div>
                                           <!---Tombol edit--->
                                           <div class="col">
-                                            <form onsubmit="return confirm('Apakah anda yakin edit data absen guru ?');"   action="<?php echo e(route('edit_absen_guru', $data)); ?>" method="get">
+                                            <form onsubmit="return confirm('Apakah anda yakin edit data absen guru ?');" action="<?php echo e(route('edit_absen_guru', $data->id)); ?>" method="get">
                                                 <button type="submit" class="btn btn-sm btn-info mt-2">
                                                     Edit
                                                 </button>

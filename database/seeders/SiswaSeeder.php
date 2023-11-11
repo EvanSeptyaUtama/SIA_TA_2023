@@ -36,7 +36,8 @@ class SiswaSeeder extends Seeder
                 'desa_kelurahan' => 'Teluk Lingga',
                 'kecamatan' => 'Sangatta Utara',
                 'kode_pos' => '75611',
-                'foto_siswa' => 'profile.jpg'
+                'foto_siswa' => 'profile.jpg',
+                'kelas_id' => 1,
             ],
             [
                 'nisn' => 323222,
@@ -57,7 +58,8 @@ class SiswaSeeder extends Seeder
                 'desa_kelurahan' => 'Teluk Lingga',
                 'kecamatan' => 'Sangatta Utara',
                 'kode_pos' => '75611',
-                'foto_siswa' => 'Siswa/foto.jpg'
+                'foto_siswa' => 'Siswa/foto.jpg',
+                'kelas_id' => 1,
             ],
             [
                 'nisn' => 22222,
@@ -78,7 +80,8 @@ class SiswaSeeder extends Seeder
                 'desa_kelurahan' => 'Teluk Lingga',
                 'kecamatan' => 'Sangatta Utara',
                 'kode_pos' => '75611',
-                'foto_siswa' => 'Siswa/foto.jpg'
+                'foto_siswa' => 'Siswa/foto.jpg',
+                'kelas_id' => 1,
             ],
             [
                 'nisn' => 36666,
@@ -99,7 +102,8 @@ class SiswaSeeder extends Seeder
                 'desa_kelurahan' => 'Teluk Lingga',
                 'kecamatan' => 'Sangatta Utara',
                 'kode_pos' => '75611',
-                'foto_siswa' => 'Siswa/foto.jpg'
+                'foto_siswa' => 'Siswa/foto.jpg',
+                'kelas_id' => 1,
             ],
             [
                 'nisn' => 423222,
@@ -120,7 +124,8 @@ class SiswaSeeder extends Seeder
                 'desa_kelurahan' => 'Teluk Lingga',
                 'kecamatan' => 'Sangatta Utara',
                 'kode_pos' => '75611',
-                'foto_siswa' => 'Siswa/foto.jpg'
+                'foto_siswa' => 'Siswa/foto.jpg',
+                'kelas_id' => 1,
             ],
             [
                 'nisn' => 543333,
@@ -141,7 +146,8 @@ class SiswaSeeder extends Seeder
                 'desa_kelurahan' => 'Teluk Lingga',
                 'kecamatan' => 'Sangatta Utara',
                 'kode_pos' => '75611',
-                'foto_siswa' => 'Siswa/foto.jpg'
+                'foto_siswa' => 'Siswa/foto.jpg',
+                'kelas_id' => 1,
             ],
             [
                 'nisn' => 32111,
@@ -162,7 +168,8 @@ class SiswaSeeder extends Seeder
                 'desa_kelurahan' => 'Teluk Lingga',
                 'kecamatan' => 'Sangatta Utara',
                 'kode_pos' => '75611',
-                'foto_siswa' => 'Siswa/foto.jpg'
+                'foto_siswa' => 'Siswa/foto.jpg',
+                'kelas_id' => 1,
             ],
             [
                 'nisn' => 32422,
@@ -183,7 +190,8 @@ class SiswaSeeder extends Seeder
                 'desa_kelurahan' => 'Teluk Lingga',
                 'kecamatan' => 'Sangatta Utara',
                 'kode_pos' => '75611',
-                'foto_siswa' => 'Siswa/foto.jpg'
+                'foto_siswa' => 'Siswa/foto.jpg',
+                'kelas_id' => 1,
             ],
             [
                 'nisn' => 132222,
@@ -204,7 +212,8 @@ class SiswaSeeder extends Seeder
                 'desa_kelurahan' => 'Teluk Lingga',
                 'kecamatan' => 'Sangatta Utara',
                 'kode_pos' => '75611',
-                'foto_siswa' => 'Siswa/foto.jpg'
+                'foto_siswa' => 'Siswa/foto.jpg',
+                'kelas_id' => 1,
             ],
             [
                 'nisn' => 13222,
@@ -225,7 +234,8 @@ class SiswaSeeder extends Seeder
                 'desa_kelurahan' => 'Teluk Lingga',
                 'kecamatan' => 'Sangatta Utara',
                 'kode_pos' => '75611',
-                'foto_siswa' => 'Siswa/foto.jpg'
+                'foto_siswa' => 'Siswa/foto.jpg',
+                'kelas_id' => 1,
             ],
             [
                 'nisn' => 13222,
@@ -246,7 +256,8 @@ class SiswaSeeder extends Seeder
                 'desa_kelurahan' => 'Teluk Lingga',
                 'kecamatan' => 'Sangatta Utara',
                 'kode_pos' => '75611',
-                'foto_siswa' => 'Siswa/foto.jpg'
+                'foto_siswa' => 'Siswa/foto.jpg',
+                'kelas_id' => 1,
             ],
             [
                 'nisn' => 21301,
@@ -267,7 +278,8 @@ class SiswaSeeder extends Seeder
                 'desa_kelurahan' => 'Teluk Lingga',
                 'kecamatan' => 'Sangatta Utara',
                 'kode_pos' => '75611',
-                'foto_siswa' => 'profile.jpg'
+                'foto_siswa' => 'profile.jpg',
+                'kelas_id' => 1,
             ],
             [
                 'nisn' => 323202,
@@ -288,7 +300,8 @@ class SiswaSeeder extends Seeder
                 'desa_kelurahan' => 'Teluk Lingga',
                 'kecamatan' => 'Semarang',
                 'kode_pos' => '75613',
-                'foto_siswa' => 'Siswa/foto.jpg'
+                'foto_siswa' => 'Siswa/foto.jpg',
+                'kelas_id' => 1,
             ],
             [
                 'nisn' => 22205,
@@ -309,7 +322,8 @@ class SiswaSeeder extends Seeder
                 'desa_kelurahan' => 'Teluk Lingga',
                 'kecamatan' => 'Singa Macan Ciliwung',
                 'kode_pos' => '75611',
-                'foto_siswa' => 'Siswa/foto.jpg'
+                'foto_siswa' => 'Siswa/foto.jpg',
+                'kelas_id' => 1,
             ],
             [
                 'nisn' => 36606,
@@ -330,7 +344,8 @@ class SiswaSeeder extends Seeder
                 'desa_kelurahan' => 'Teluk Lingga',
                 'kecamatan' => 'Sau paulo',
                 'kode_pos' => '75611',
-                'foto_siswa' => 'Siswa/foto.jpg'
+                'foto_siswa' => 'Siswa/foto.jpg',
+                'kelas_id' => 1,
             ],
             [
                 'nisn' => 423299,
@@ -351,7 +366,8 @@ class SiswaSeeder extends Seeder
                 'desa_kelurahan' => 'Teluk Lingga',
                 'kecamatan' => 'Sangatta Utara',
                 'kode_pos' => '75199',
-                'foto_siswa' => 'Siswa/foto.jpg'
+                'foto_siswa' => 'Siswa/foto.jpg',
+                'kelas_id' => 1,
             ],
             [
                 'nisn' => 121312,
@@ -372,7 +388,8 @@ class SiswaSeeder extends Seeder
                 'desa_kelurahan' => 'Teluk Sangkur',
                 'kecamatan' => 'Padang Sangkur',
                 'kode_pos' => '75611',
-                'foto_siswa' => 'Siswa/foto.jpg'
+                'foto_siswa' => 'Siswa/foto.jpg',
+                'kelas_id' => 1,
             ],
             [
                 'nisn' => 324222,
@@ -393,7 +410,8 @@ class SiswaSeeder extends Seeder
                 'desa_kelurahan' => 'Teluk Lingga',
                 'kecamatan' => 'Sangatta Utara',
                 'kode_pos' => '75611',
-                'foto_siswa' => 'Siswa/foto.jpg'
+                'foto_siswa' => 'Siswa/foto.jpg',
+                'kelas_id' => 1,
             ],
             [
                 'nisn' => 5466542,
@@ -414,7 +432,8 @@ class SiswaSeeder extends Seeder
                 'desa_kelurahan' => 'Teluk Lingga',
                 'kecamatan' => 'Sangatta Utara',
                 'kode_pos' => '75611',
-                'foto_siswa' => 'Siswa/foto.jpg'
+                'foto_siswa' => 'Siswa/foto.jpg',
+                'kelas_id' => 1,
             ],
             [
                 'nisn' => 8980766,
@@ -435,7 +454,8 @@ class SiswaSeeder extends Seeder
                 'desa_kelurahan' => 'Teluk Lingga',
                 'kecamatan' => 'Sangatta Utara',
                 'kode_pos' => '75611',
-                'foto_siswa' => 'Siswa/foto.jpg'
+                'foto_siswa' => 'Siswa/foto.jpg',
+                'kelas_id' => 1,
             ],
             [
                 'nisn' => 34242111,
@@ -456,7 +476,8 @@ class SiswaSeeder extends Seeder
                 'desa_kelurahan' => 'Teluk Lingga',
                 'kecamatan' => 'Sangatta Utara',
                 'kode_pos' => '75611',
-                'foto_siswa' => 'Siswa/foto.jpg'
+                'foto_siswa' => 'Siswa/foto.jpg',
+                'kelas_id' => 1,
             ],
             [
                 'nisn' => 657585,
@@ -477,7 +498,8 @@ class SiswaSeeder extends Seeder
                 'desa_kelurahan' => 'Teluk Lingga',
                 'kecamatan' => 'Sangatta Utara',
                 'kode_pos' => '75611',
-                'foto_siswa' => 'Siswa/foto.jpg'
+                'foto_siswa' => 'Siswa/foto.jpg',
+                'kelas_id' => 1,
             ],
             //
             [
@@ -499,7 +521,8 @@ class SiswaSeeder extends Seeder
                 'desa_kelurahan' => 'Teluk Lingga',
                 'kecamatan' => 'Sangatta Utara',
                 'kode_pos' => '75611',
-                'foto_siswa' => 'profile.jpg'
+                'foto_siswa' => 'profile.jpg',
+                'kelas_id' => 1,
             ],
             [
                 'nisn' => 543453,
@@ -520,7 +543,8 @@ class SiswaSeeder extends Seeder
                 'desa_kelurahan' => 'Teluk Lingga',
                 'kecamatan' => 'Sangatta Utara',
                 'kode_pos' => '75611',
-                'foto_siswa' => 'Siswa/foto.jpg'
+                'foto_siswa' => 'Siswa/foto.jpg',
+                'kelas_id' => 1,
             ],
             [
                 'nisn' => 91288,
@@ -541,7 +565,8 @@ class SiswaSeeder extends Seeder
                 'desa_kelurahan' => 'Teluk Lingga',
                 'kecamatan' => 'Sangatta Utara',
                 'kode_pos' => '75699',
-                'foto_siswa' => 'foto_laku.jpg'
+                'foto_siswa' => 'foto_laku.jpg',
+                'kelas_id' => 1,
             ],
             [
                 'nisn' => 8213742,
@@ -562,7 +587,8 @@ class SiswaSeeder extends Seeder
                 'desa_kelurahan' => 'Teluk Lingga',
                 'kecamatan' => 'Sangatta Utara',
                 'kode_pos' => '75611',
-                'foto_siswa' => 'Siswa/foto.jpg'
+                'foto_siswa' => 'Siswa/foto.jpg',
+                'kelas_id' => 1,
             ],
             [
                 'nisn' => 2342700,
@@ -583,7 +609,8 @@ class SiswaSeeder extends Seeder
                 'desa_kelurahan' => 'Teluk Lingga',
                 'kecamatan' => 'Sangatta Utara',
                 'kode_pos' => '75611',
-                'foto_siswa' => 'Siswa/foto.jpg'
+                'foto_siswa' => 'Siswa/foto.jpg',
+                'kelas_id' => 1,
             ],
             [
                 'nisn' => 3453788,
@@ -604,7 +631,8 @@ class SiswaSeeder extends Seeder
                 'desa_kelurahan' => 'Teluk Lingga',
                 'kecamatan' => 'Sangatta Utara',
                 'kode_pos' => '75611',
-                'foto_siswa' => 'Siswa/foto.jpg'
+                'foto_siswa' => 'Siswa/foto.jpg',
+                'kelas_id' => 1,
             ],
             [
                 'nisn' => 2342609,
@@ -625,7 +653,8 @@ class SiswaSeeder extends Seeder
                 'desa_kelurahan' => 'Teluk Lingga',
                 'kecamatan' => 'Sangatta Utara',
                 'kode_pos' => '75622',
-                'foto_siswa' => 'Siswa/foto.jpg'
+                'foto_siswa' => 'Siswa/foto.jpg',
+                'kelas_id' => 1,
             ],
             [
                 'nisn' => 1309879,
@@ -646,7 +675,8 @@ class SiswaSeeder extends Seeder
                 'desa_kelurahan' => 'Teluk Lingga',
                 'kecamatan' => 'Sangatta Utara',
                 'kode_pos' => '75611',
-                'foto_siswa' => 'Siswa/foto.jpg'
+                'foto_siswa' => 'Siswa/foto.jpg',
+                'kelas_id' => 1,
             ],
             [
                 'nisn' => 2342444,
@@ -667,7 +697,8 @@ class SiswaSeeder extends Seeder
                 'desa_kelurahan' => 'Teluk Lingga',
                 'kecamatan' => 'Sangatta Utara',
                 'kode_pos' => '75611',
-                'foto_siswa' => 'Siswa/foto.jpg'
+                'foto_siswa' => 'Siswa/foto.jpg',
+                'kelas_id' => 1,
             ],
             [
                 'nisn' => 18217212,
@@ -688,7 +719,8 @@ class SiswaSeeder extends Seeder
                 'desa_kelurahan' => 'Teluk Lingga',
                 'kecamatan' => 'Sangatta Utara',
                 'kode_pos' => '75611',
-                'foto_siswa' => 'Siswa/foto.jpg'
+                'foto_siswa' => 'Siswa/foto.jpg',
+                'kelas_id' => 1,
             ],
             [
                 'nisn' => 21341009,
@@ -709,7 +741,8 @@ class SiswaSeeder extends Seeder
                 'desa_kelurahan' => 'Teluk Lingga',
                 'kecamatan' => 'Sangatta Utara',
                 'kode_pos' => '75611',
-                'foto_siswa' => 'Siswa/foto.jpg'
+                'foto_siswa' => 'Siswa/foto.jpg',
+                'kelas_id' => 1,
             ],
             [
                 'nisn' => 2342009,
@@ -730,7 +763,8 @@ class SiswaSeeder extends Seeder
                 'desa_kelurahan' => 'Teluk Lingga',
                 'kecamatan' => 'Sangatta Utara',
                 'kode_pos' => '75611',
-                'foto_siswa' => 'profile.jpg'
+                'foto_siswa' => 'profile.jpg',
+                'kelas_id' => 1,
             ],
             [
                 'nisn' => 1230011,
@@ -751,7 +785,8 @@ class SiswaSeeder extends Seeder
                 'desa_kelurahan' => 'Teluk Lingga',
                 'kecamatan' => 'Semarang',
                 'kode_pos' => '75613',
-                'foto_siswa' => 'Siswa/foto.jpg'
+                'foto_siswa' => 'Siswa/foto.jpg',
+                'kelas_id' => 1,
             ],
             [
                 'nisn' => 2131555,
@@ -772,7 +807,8 @@ class SiswaSeeder extends Seeder
                 'desa_kelurahan' => 'Teluk Lingga',
                 'kecamatan' => 'Singa Macan Ciliwung',
                 'kode_pos' => '75611',
-                'foto_siswa' => 'Siswa/foto.jpg'
+                'foto_siswa' => 'Siswa/foto.jpg',
+                'kelas_id' => 1,
             ],
             [
                 'nisn' => 3212111,
@@ -793,7 +829,8 @@ class SiswaSeeder extends Seeder
                 'desa_kelurahan' => 'Teluk Lingga',
                 'kecamatan' => 'Sau paulo',
                 'kode_pos' => '75611',
-                'foto_siswa' => 'Siswa/foto.jpg'
+                'foto_siswa' => 'Siswa/foto.jpg',
+                'kelas_id' => 1,
             ],
             [
                 'nisn' => 223199,
@@ -814,7 +851,8 @@ class SiswaSeeder extends Seeder
                 'desa_kelurahan' => 'Teluk Lingga',
                 'kecamatan' => 'Sangatta Utara',
                 'kode_pos' => '75199',
-                'foto_siswa' => 'Siswa/foto.jpg'
+                'foto_siswa' => 'Siswa/foto.jpg',
+                'kelas_id' => 1,
             ],
             [
                 'nisn' => 23436278,
@@ -835,7 +873,8 @@ class SiswaSeeder extends Seeder
                 'desa_kelurahan' => 'Teluk Sangkur',
                 'kecamatan' => 'Padang Sangkur',
                 'kode_pos' => '75611',
-                'foto_siswa' => 'Siswa/foto.jpg'
+                'foto_siswa' => 'Siswa/foto.jpg',
+                'kelas_id' => 1,
             ],
             [
                 'nisn' => 23111,
@@ -856,7 +895,8 @@ class SiswaSeeder extends Seeder
                 'desa_kelurahan' => 'Teluk Lingga',
                 'kecamatan' => 'Sangatta Utara',
                 'kode_pos' => '75611',
-                'foto_siswa' => 'Siswa/foto.jpg'
+                'foto_siswa' => 'Siswa/foto.jpg',
+                'kelas_id' => 1,
             ],
             [
                 'nisn' => 24111,
@@ -877,7 +917,8 @@ class SiswaSeeder extends Seeder
                 'desa_kelurahan' => 'Teluk Lingga',
                 'kecamatan' => 'Sangatta Utara',
                 'kode_pos' => '75611',
-                'foto_siswa' => 'Siswa/foto.jpg'
+                'foto_siswa' => 'Siswa/foto.jpg',
+                'kelas_id' => 1,
             ],
             [
                 'nisn' => 53332,
@@ -898,7 +939,8 @@ class SiswaSeeder extends Seeder
                 'desa_kelurahan' => 'Teluk Lingga',
                 'kecamatan' => 'Sangatta Utara',
                 'kode_pos' => '75611',
-                'foto_siswa' => 'Siswa/foto.jpg'
+                'foto_siswa' => 'Siswa/foto.jpg',
+                'kelas_id' => 1,
             ],
             [
                 'nisn' => 32233,
@@ -919,7 +961,8 @@ class SiswaSeeder extends Seeder
                 'desa_kelurahan' => 'Teluk Lingga',
                 'kecamatan' => 'Sangatta Utara',
                 'kode_pos' => '75611',
-                'foto_siswa' => 'Siswa/foto.jpg'
+                'foto_siswa' => 'Siswa/foto.jpg',
+                'kelas_id' => 1,
             ],
             [
                 'nisn' => 12888,
@@ -940,7 +983,8 @@ class SiswaSeeder extends Seeder
                 'desa_kelurahan' => 'Teluk Lingga',
                 'kecamatan' => 'Sangatta Utara',
                 'kode_pos' => '75611',
-                'foto_siswa' => 'Siswa/foto.jpg'
+                'foto_siswa' => 'Siswa/foto.jpg',
+                'kelas_id' => 1,
             ],
 
         ]);

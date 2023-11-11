@@ -5,12 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\Guru;
 use App\Models\Kelas;
 use App\Exports\ExportGuru;
-use App\Imports\GuruImport;
-use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\Redirect;
+
 
 class GuruController extends Controller
 {
@@ -34,13 +34,13 @@ class GuruController extends Controller
     {
 
         //Validasi  
-        $request->validate([
+       $request->validate([
             'nip' => 'required',
             'nama_guru' => 'required',
+            'foto_guru' => 'required|image|mimes:jpg,jpeg,png,bmp,tiff|max:4096',
             'no_telp' => 'required',
             'jenis_kelamin' => 'required',
             'alamat_guru' => 'required',
-            'foto_guru' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:3048',
             'tempat_lahir' => 'required',
             'ttl' => 'required',
             'agama' => 'required',
@@ -53,18 +53,22 @@ class GuruController extends Controller
 
         //Upload Foto
         $file = $request->file('foto_guru');
-        $path = time() . '_' . $request->nama_guru . '.' . $file->getClientOriginalExtension();
+        $path = time().'_'. $request->nama_guru.'.'. $file->getClientOriginalExtension();
+        Storage::disk('local')->put('public/Guru_image/'.$path, file_get_contents($file));
 
-        Storage::disk('local')->put('public/Pengajar/' . $path, file_get_contents($file));
+        // $file = $request->file('gambar_aktivitas');
+        // $path = time() . '_' . $request->nama_aktivitas . '.' . $file->getClientOriginalExtension();
+
+        // Storage::disk('local')->put('public/Kegiatan_Sekolah/' . $path, file_get_contents($file));
        
-       Guru::create([
+        Guru::create([
             'nip' => $request->nip,
             'nama_guru' => $request->nama_guru,
+            'foto_guru' => $request->path,
             'no_telp' => $request->no_telp,
             'jenis_kelamin' => $request->jenis_kelamin,
             'alamat_guru' => $request->alamat_guru,
             'tempat_lahir' =>$request->tempat_lahir,
-            'foto_guru' => $request->path,
             'ttl' => $request->ttl,
             'jabatan' => $request->jabatan,
             'agama' => $request->agama,
@@ -73,7 +77,7 @@ class GuruController extends Controller
             'desa_kelurahan' => $request->desa_kelurahan,
             'kecamatan' => $request->kecamatan,
             'kode_pos' => $request->kode_pos,
-            'kelas_id' => $request->kelas_id,
+            // 'kelas_id' => $request->kelas_id,
        ]);
 
         //Setelah input akan ditampilkan pada index guru
@@ -87,8 +91,8 @@ class GuruController extends Controller
 
     public function edit_guru(Guru $data_guru)
     {
-        $edit_kelas = Kelas::all();
-        return view('admin.Master.biodata_guru.data_guru_edit', compact('data_guru','edit_kelas'));
+        $kelas_edit = Kelas::all();
+        return view('admin.Master.biodata_guru.data_guru_edit', compact('data_guru','kelas_edit'));
     }
 
     public function update_guru(Request $request, Guru $data_guru)
@@ -96,12 +100,12 @@ class GuruController extends Controller
         $request->validate([
             'nip' => 'required',
             'nama_guru' => 'required',
+            'foto_guru' => 'required|image|mimes:jpg,jpeg,png,bmp,tiff|max:4096',
             'no_telp' => 'required',
             'jenis_kelamin' => 'required',
             'alamat_guru' => 'required',
             'tempat_lahir' => 'required',
             'ttl' => 'required',
-            'jabatan' => 'required',
             'agama' => 'required',
             'suku' => 'required',
             'rt_rw' => 'required',
@@ -109,30 +113,29 @@ class GuruController extends Controller
             'kecamatan' => 'required',
             'kode_pos' => 'required',
         ]);
+            //Upload Foto
+            $file = $request->file('foto_guru');
+            $path = time().'-'.$request->nama_guru.'.'.$file->getClientOriginalExtension();
+            Storage::disk('local')->put('public/Guru_image/'.$path, file_get_contents($file));
 
-        //Upload Foto
-        $file = $request->file('foto_guru');
-        $path = time() . '_' . $request->nama_guru . '.' . $file->getClientOriginalExtension();
-
-        Storage::disk('local')->put('public/Pengajar/' . $path, file_get_contents($file));
-       
         
         $data_guru->update([
             'nip' => $request->nip,
             'nama_guru' => $request->nama_guru,
+            'foto_guru' => $request->path,
             'no_telp' => $request->no_telp,
             'jenis_kelamin' => $request->jenis_kelamin,
             'alamat_guru' => $request->alamat_guru,
             'tempat_lahir' =>$request->tempat_lahir,
-            'foto_guru' => $request->path,
             'ttl' => $request->ttl,
+            'jabatan' => $request->jabatan,
             'agama' => $request->agama,
             'suku' => $request->suku,
             'rt_rw' => $request->rt_rw,
             'desa_kelurahan' => $request->desa_kelurahan,
             'kecamatan' => $request->kecamatan,
             'kode_pos' => $request->kode_pos,
-            'kelas_id' => $request->kelas_id,
+            // 'kelas_id' => $request->kelas_id,
         ]);
         return Redirect::route('index_guru')->with('success', 'Berhasil edit data guru!!');
         

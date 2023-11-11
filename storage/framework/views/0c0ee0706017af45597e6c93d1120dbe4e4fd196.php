@@ -25,30 +25,30 @@
                 </div>
             </div>
             
-         <!---Alert-->
-         <div class="row">
-            <div class="col-md-12">
-                <?php if($errors->any()): ?>
-                    <div class="alert alert-danger">
-                        <div class="alert-title"><h4>Maaf!</h4></div>
-                            Terdapat kesalahan dalam input data
-                        <ul>
-                        <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <li><?php echo e($error); ?></li>
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                        </ul>
-                    </div> 
+            <!---Alert-->
+            <div class="row">
+                <div class="col-md-12">
+                    <?php if($errors->any()): ?>
+                        <div class="alert alert-danger">
+                            <div class="alert-title"><h4>Maaf!</h4></div>
+                                Terdapat kesalahan dalam input data
+                            <ul>
+                            <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <li><?php echo e($error); ?></li>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            </ul>
+                        </div> 
+                    <?php endif; ?>
+
+                <?php if(session('success')): ?>
+                    <div class="alert alert-success"><?php echo e(session('success')); ?></div>
                 <?php endif; ?>
 
-              <?php if(session('success')): ?>
-                <div class="alert alert-success"><?php echo e(session('success')); ?></div>
-              <?php endif; ?>
-
-              <?php if(session('error')): ?>
-                <div class="alert alert-danger"><?php echo e(session('error')); ?></div>
-              <?php endif; ?>
+                <?php if(session('error')): ?>
+                    <div class="alert alert-danger"><?php echo e(session('error')); ?></div>
+                <?php endif; ?>
+                </div>
             </div>
-        </div>
         </div>
         
         <!---Bagian Body : table dan pagination-->
@@ -61,7 +61,7 @@
                             <th>Mulai</th>
                             <th>Selesai</th>
                             <th>Hari</th>
-                            <th>Guru</th>
+                            <th>Pengajar</th>
                             <th>Kelas</th>
                             <th>Mata Pelajaran</th>
                             <th width="150px">Aksi</th>
@@ -75,7 +75,7 @@
                             <td><?php echo e($data->waktu_selesai); ?></td>
                             <td><?php echo e($data->hari); ?></td>
                             <td>
-                                <?php echo e($data->gurus->nama_guru); ?>
+                                <?php echo e($data->pengajar->nama_pengajar); ?>
 
                             </td>
                             <td>

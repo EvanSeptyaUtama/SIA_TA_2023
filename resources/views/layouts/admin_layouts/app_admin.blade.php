@@ -27,7 +27,6 @@
      <script defer src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
      <script defer src="https://cdn.datatables.net/responsive/2.5.0/js/responsive.bootstrap5.min.js"></script>
      <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    
       <script defer src="{{asset('pi_assets/js/main.js')}}"></script>
 </head>
 <style>
@@ -54,6 +53,16 @@
     }
     .sidebar ul{
         list-style: none;
+    }
+    .img-index_admin{
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+    }
+    .img-tampil-admin{
+        border-radius: 10%;
+        width: 220px;
+        height: 250px;
     }
     .sidebar ul li{
         padding: 5px;
@@ -215,31 +224,32 @@
                             <div class="nav-itemku dropdown">
                                 <div class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">Data Pengguna</div>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="{{route('index_user_admin')}}">Admin</a></li>
+                                        <li><a class="dropdown-item" href="{{route('index_user_admin')}}"><i class="fa fa-user-circle-o"></i> Admin</a></li>
                                     </ul>
                             </div>
                              <!---Sidebar : Data Master--->
                             <div class="nav-itemku dropdown">
                                 <div class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">Data Master</div>
                                 <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="{{route('index_guru')}}">Pengajar</a></li>
-                                <li><a class="dropdown-item" href="{{route('index_siswa') }}">Siswa</a></li>
+                                <li><a class="dropdown-item" href="{{route('index_guru')}}">Guru</a></li>
+                                <li><a class="dropdown-item" href="{{route('index_siswa') }}"><i class="fa fa-user"></i> Siswa</a></li>
+                                <li><a class="dropdown-item" href="{{route('index_pengajar') }}"><i class="fa fa-user"></i> Pengajar</a></li>
                                 </ul>
                             </div>
                              <!---Sidebar : Data Umum--->
                             <div class="nav-itemku dropdown">
                                 <div class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">Data Umum</div>
                                 <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="{{ route('index_tahun_pelajaran') }}">Tahun Pelajaran</a></li>
-                                <li><a class="dropdown-item" href="{{ route('index_kelas') }}">Kelas</a></li>
-                                <li><a class="dropdown-item" href="{{ route('index_mata_pelajaran') }}">Mata Pelajaran</a></li>
+                                <li><a class="dropdown-item" href="{{ route('index_tahun_pelajaran') }}"><i class="fa fa-book"></i> Tahun Pelajaran</a></li>
+                                <li><a class="dropdown-item" href="{{ route('index_kelas') }}"><i class="fa fa-book"></i> Kelas</a></li>
+                                <li><a class="dropdown-item" href="{{ route('index_mata_pelajaran') }}"><i class="fa fa-book"></i> Mata Pelajaran</a></li>
                                 </ul>
                             </div>
                             <div class="nav-itemku dropdown">
                                 <div class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">Jadwal Mengajar</div>
                                 <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="{{route('tambah_jadwal_mengajar_guru')}}">Tambah Jadwal</a></li>
-                                <li><a class="dropdown-item" href="{{route('index_jadwal_mengajar_guru')}}">Daftar Mengajar</a></li>
+                                <li><a class="dropdown-item" href="{{route('tambah_jadwal_mengajar_guru')}}"><i class="fa fa-plus-circle"></i> Tambah Jadwal</a></li>
+                                <li><a class="dropdown-item" href="{{route('index_jadwal_mengajar_guru')}}"><i class="fa fa-calendar-plus-o"></i> Daftar Mengajar</a></li>
                                 </ul>
                             </div>
                             <div class="main_utama">
@@ -247,8 +257,8 @@
                             </div>
                              <!---Sidebar : Halaman Utama--->
                             <div class="nav-itemku dropdown">
-                                <div class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">Halaman Awal Website</div>
-                                    <ul class="dropdown-menu">
+                                <div class="nav-link dropdown-toggle" href="#submenu1" data-bs-toggle="dropdown" role="button" aria-expanded="false">Halaman Awal Website</div>
+                                    <ul class="dropdown-menu dropdown" id="submenu1">
                                         <li><a class="dropdown-item" href="{{route('index_halaman_utama')}}">Halaman Utama</a></li>
                                         <li><a class="dropdown-item" href="{{route('index_sejarah')}}">Sejarah</a></li>
                                         <li><a class="dropdown-item" href="{{route('index_aktivitas')}}">Aktivitas Sekolah</a></li>
@@ -261,7 +271,7 @@
                              <div class="nav-itemku dropdown">
                                 <div class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">PPDB</div>
                                 <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="{{route('index_halaman_ppdb')}}">Home</a></li>
+                                <li><a class="dropdown-item" href="{{route('index_halaman_ppdb')}}">Halaman Utama PPDB</a></li>
                                 <li><a class="dropdown-item" href="{{route('index_halaman_ip_ppdb')}}">Informasi Pengumuman</a></li>
                                 </ul>
                             </div>
@@ -272,10 +282,9 @@
                             </div>
                             <div class="nav-itemku dropdown">
                                 <div class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">Siswa</div>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="{{ route('index_absen_siswa') }}">Absensi</a></li>
-                                    {{-- <li><a class="dropdown-item" href="{{ route('calculate_view') }}">Calculate</a></li> --}}
-                                    <li><a class="dropdown-item" href="{{ route('index_absen_siswa') }}">Rekab Absensi</a></li>
+                                <ul class="dropdown-menu collapse">
+                                    <li><a class="dropdown-item" href="{{ route('index_absen_siswa') }}"><i class="fa fa-user-plus"></i> Absensi</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('index_absen_siswa') }}"><i class="fa fa-calendar-check-o"></i> Rekab Absensi</a></li>
                                     {{-- <li><a class="dropdown-item" href="">Laporan Harian</a></li> --}}
                                     {{-- <li><a class="dropdown-item" href="">Laporan Bulanan</a></li> --}}
                                 </ul>
@@ -283,7 +292,7 @@
                             <div class="nav-itemku dropdown">
                                 <div class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">Guru</div>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="{{route('index_absen_guru')}}">Absensi</a></li>
+                                    <li><a class="dropdown-item" href="{{route('index_absen_guru')}}"><i class="fa fa-user-plus"></i> Absensi</a></li>
                                 </ul>
                             </div>
                             <!---Menu Coba--->

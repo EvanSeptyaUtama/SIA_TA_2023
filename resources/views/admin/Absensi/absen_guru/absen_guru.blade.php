@@ -32,11 +32,11 @@
                         <!--Input Foreign key : table guru dan table kelas dan table mata pelajaran-->
                         <div class="col-md-4 mb-2">
                           <div class="form-group ">
-                            <label class="col-sm-2 col-label-form"><strong>Guru</strong></label>
-                            <select name="guru_id" class="form-control border-dark" class="col-sm-10" >
-                              <option value="">- Pilih Guru -</option> 
-                                @foreach ($gurus as $item)
-                                    <option value="{{$item->id}}">{{$item->nama_guru}}</option>
+                            <label class="col-sm-3 col-label-form"><strong>Pengajar</strong></label>
+                            <select name="pengajar_id" class="form-control border-dark" class="col-sm-10" >
+                              <option value="">- Pilih Pengajar -</option> 
+                                @foreach ($pengajar as $item)
+                                    <option value="{{$item->id}}">{{$item->nama_pengajar}}</option>
                                 @endforeach
                             </select>
                           </div>
@@ -128,7 +128,7 @@
                               <th>Mulai</th>
                               <th>Selesai</th>
                               <th>Keterangan</th>
-                              <th>Guru</th>
+                              <th>Pengajar</th>
                               <th>Kelas</th>
                               <th>Mata Pelajaran</th>
                               <th>Aksi</th>
@@ -137,12 +137,12 @@
                       <tbody>
                           @foreach ($data_absen_guru as $data)
                             <tr class="text-center">
-                              <td>{{$data->tanggal_absen_guru->format('l d F Y')}}</td>
-                              <td>{{$data->waktu_mulai_guru->format('h:i A')}}</td>
-                              <td>{{$data->waktu_selesai_guru->format('h:i A')}}</td>
+                              <td>{{$data->tanggal_absen_guru}}</td>
+                              <td>{{$data->waktu_mulai_guru}}</td>
+                              <td>{{$data->waktu_selesai_guru}}</td>
                                 <td>{{$data->keterangan_guru}}</td>
                                 <td>
-                                    {{$data->gurus->nama_guru}}
+                                    {{$data->pengajar->nama_pengajar}}
                                 </td>
                                 <td>
                                     {{$data->kelas->nama_kelas}}
@@ -155,7 +155,7 @@
                                         <div class="row">
                                           <!---Tombol tampil data secara detail--->
                                           <div class="col">
-                                            <form action="{{route('tampil_absen_guru', $data)}}" method="get">
+                                            <form action="{{route('tampil_absen_guru', $data->id)}}" method="get">
                                                 <button type="submit" class="btn btn-sm btn-secondary mt-2">
                                                     Detail
                                                 </button>
@@ -163,7 +163,7 @@
                                           </div>
                                           <!---Tombol edit--->
                                           <div class="col">
-                                            <form onsubmit="return confirm('Apakah anda yakin edit data absen guru ?');"   action="{{route('edit_absen_guru', $data)}}" method="get">
+                                            <form onsubmit="return confirm('Apakah anda yakin edit data absen guru ?');" action="{{route('edit_absen_guru', $data->id)}}" method="get">
                                                 <button type="submit" class="btn btn-sm btn-info mt-2">
                                                     Edit
                                                 </button>

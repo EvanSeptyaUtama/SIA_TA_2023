@@ -7,7 +7,7 @@
             <th><strong>Mulai</strong></th>
             <th><strong>Selesai</strong></th>
             <th><strong>Hari</strong></th>
-            <th><strong>Guru</strong></th>
+            <th><strong>Pengajar</strong></th>
             <th><strong>Kelas</strong></th>
             <th><strong>Mata Pelajaran</strong></th>
         </tr>
@@ -20,7 +20,7 @@
             <td>{{$data->waktu_selesai}}</td>
             <td>{{$data->hari}}</td>
             <td>
-                {{$data->gurus->nama_guru}}
+                {{$data->pengajar->nama_pengajar}}
             </td>
             <td>
                 {{$data->kelas->nama_kelas}}

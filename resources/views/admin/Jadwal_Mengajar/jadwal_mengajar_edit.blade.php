@@ -79,12 +79,12 @@
                                         <label class="col-sm-2 col-label-form">Hari</label>
                                         <input class="col-sm-10 " type="text" name="hari"  value="{{$data_jadwal_mengajar_guru->hari}}" placeholder="Contoh : Senin, Selasa, dll..." class="form-control">
                                     </div>
-                                     <!--Foreign key : Table Guru--->
+                                     <!--Foreign key : Table Pengajar--->
                                     <div class="form-group mt-1">
-                                        <label class="col-sm-2 col-label-form">Guru</label>
-                                        <select name="guru_id" class="form-control" class="col-sm-10" >
-                                            @foreach ($edit_guru as $item)
-                                                <option value="{{$item->id}}" {{$data_jadwal_mengajar_guru->guru_id == $item->id ? 'selected':'' }}>{{$item->nama_guru}}</option>
+                                        <label class="col-sm-2 col-label-form">Pengajar</label>
+                                        <select name="pengajar_id" class="form-control" class="col-sm-10" >
+                                            @foreach ($edit_pengajar as $item)
+                                                <option value="{{$item->id}}" {{$data_jadwal_mengajar_guru->pengajar_id == $item->id ? 'selected':'' }}>{{$item->nama_pengajar}}</option>
                                             @endforeach
                                         </select>
                                     </div>

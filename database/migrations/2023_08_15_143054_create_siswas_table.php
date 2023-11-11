@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('nama_siswa');
             $table->string('alamat_siswa');
             $table->string('tempat_lahir');
-            $table->string('foto_siswa')->nullable();
+            $table->string('foto_siswa');
             $table->date('ttl');
             $table->enum('jenis_kelamin', ['Laki-Laki', 'Perempuan']);
             $table->enum('agama', ['Islam', 'Katholik', 'Protestan', 'Hindu', 'Budha', 'Konghucu']);

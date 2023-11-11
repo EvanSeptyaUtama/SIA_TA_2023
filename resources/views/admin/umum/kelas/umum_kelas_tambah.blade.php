@@ -32,7 +32,6 @@
                                 <label>Nama Kelas :</label>
                                 <input type="text" name="nama_kelas" placeholder="Masukkan nama kelas" class="form-control">
                             </div>
-    
                             <button type="submit" class="btn btn-primary mt-3">Submit data</button>
                         </form>
                     </div>

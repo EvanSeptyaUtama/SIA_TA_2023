@@ -90,16 +90,15 @@
                                     </div>
 
                                     <div class="row mb-2">
-                                        <label class="col-sm-2 col-label-form">Guru</label>
+                                        <lable class="col-sm-2 col-label-form">Pengajar</lable>
                                         <div class="col-sm-10">
-                                            <select name="guru_id" class="form-control">
-                                                <option value="">- Pilih Guru -</option> 
-                                                <?php $__currentLoopData = $tambah_guru; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                    <option value="<?php echo e($item->id); ?>"><?php echo e($item->nama_guru); ?></option>
+                                            <select name="pengajar_id" class="form-control">
+                                                <option value="">- Pilih Pengajar -</option>
+                                                <?php $__currentLoopData = $tambah_pengajar; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                    <option value="<?php echo e($item->id); ?>"><?php echo e($item->nama_pengajar); ?></option>
                                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                             </select>
                                         </div>
-                                        
                                     </div>
                                     
                                     <div class="row mb-2">

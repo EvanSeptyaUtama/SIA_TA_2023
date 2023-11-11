@@ -90,16 +90,15 @@
                                     </div>
 
                                     <div class="row mb-2">
-                                        <label class="col-sm-2 col-label-form">Guru</label>
+                                        <lable class="col-sm-2 col-label-form">Pengajar</lable>
                                         <div class="col-sm-10">
-                                            <select name="guru_id" class="form-control">
-                                                <option value="">- Pilih Guru -</option> 
-                                                @foreach ($tambah_guru as $item)
-                                                    <option value="{{$item->id}}">{{$item->nama_guru}}</option>
+                                            <select name="pengajar_id" class="form-control">
+                                                <option value="">- Pilih Pengajar -</option>
+                                                @foreach($tambah_pengajar as $item)
+                                                    <option value="{{$item->id}}">{{$item->nama_pengajar}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
-                                        
                                     </div>
                                     
                                     <div class="row mb-2">

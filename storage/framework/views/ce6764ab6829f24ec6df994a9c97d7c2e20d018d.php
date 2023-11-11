@@ -108,26 +108,26 @@
                 </div>
                
                 <div class="col-md-7 pt-2">
-                    <div class="table-responsive">
-                        <div class="card">
-                            <div class="card-header text-center"><h3><strong><?php echo e(__('Tambah Data Kelas')); ?></strong></h3></div>
-                       
-                            <div class="card-body">
-                                <form action="<?php echo e(route('store_kelas')); ?>" method="post" enctype="multipart/form-data">
-                                    <?php echo csrf_field(); ?>
-                                    <div class="row">
-                                        <label class="col-sm-3 col-label-form mt-1">Kelas :</label>
-                                        <div class="col-sm-9">
-                                            <input type="text" name="nama_kelas" placeholder="Cth: 1, 2, 3, 4..." class="form-control">
-                                        </div>
-                                    </div>
+                    <div class="col">
+                        <div class="table-responsive">
+                            <div class="card">
+                                <div class="card-header text-center"><h3><strong><?php echo e(__('Tambah Data Kelas')); ?></strong></h3></div>
                         
-                                    <button type="submit" class="btn btn-primary mt-3">Submit data</button>
-                                </form>
+                                <div class="card-body">
+                                    <form action="<?php echo e(route('store_kelas')); ?>" method="post" enctype="multipart/form-data">
+                                        <?php echo csrf_field(); ?>
+                                        <div class="row mb-1">
+                                            <label class="col-sm-3 col-label-form mt-1">Kelas :</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" name="nama_kelas" placeholder="Cth: 1, 2, 3, 4..." class="form-control">
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary mt-3">Submit data</button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
             </div>
         </div>
     </div>

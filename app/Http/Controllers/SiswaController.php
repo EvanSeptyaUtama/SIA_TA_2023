@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
-use App\Models\Guru;
+use App\Models\Pengajar;
 use App\Models\Kelas;
 use App\Models\Siswa;
 use App\Exports\ExportSiswa;
@@ -25,7 +25,7 @@ class SiswaController extends Controller
     public function hitung_data_hal_admin()
     {
         $hitung_siswa = Siswa::all()->count();
-        $hitung_pengajar = Guru::all()->count();
+        $hitung_pengajar = Pengajar::all()->count();
         return view('admin.DashboardLayout', compact('hitung_siswa', 'hitung_pengajar'));
     }
 
@@ -49,13 +49,10 @@ class SiswaController extends Controller
             'nama_siswa' => 'required',
             'alamat_siswa' => 'required',
             'tempat_lahir' => 'required',
-            'foto_siswa' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:3048',
             'ttl' => 'required',
             'jenis_kelamin' => 'required',
+            'foto_siswa' => 'required|image|file|mimes:jpeg,png,jpg,gif,svg|max:3048',
             'agama' => 'required',
-            'anak_ke' => 'required',
-            'suku' => 'required',
-            'jumlah_saudara' => 'required',
             'cita_cita' => 'required',
             'hobi' => 'required',
             'no_telp' => 'required',
@@ -115,13 +112,10 @@ class SiswaController extends Controller
             'nama_siswa' => 'required',
             'alamat_siswa' => 'required',
             'tempat_lahir' => 'required',
-            'foto_siswa' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:3048',
             'ttl' => 'required',
             'jenis_kelamin' => 'required',
+            'foto_siswa' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:3048',
             'agama' => 'required',
-            'anak_ke' => 'required',
-            'suku' => 'required',
-            'jumlah_saudara' => 'required',
             'cita_cita' => 'required',
             'hobi' => 'required',
             'no_telp' => 'required',
@@ -130,7 +124,6 @@ class SiswaController extends Controller
             'desa_kelurahan' => 'required',
             'kecamatan' => 'required',
             'kode_pos' => 'required',
-            
         ]);
 
         $file = $request->file('foto_siswa');

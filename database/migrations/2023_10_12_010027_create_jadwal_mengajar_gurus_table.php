@@ -20,17 +20,17 @@ return new class extends Migration
             $table->time('waktu_selesai');
             $table->string('hari');
 
-            //Kelas
+            //Foreign key : table Kelas
             $table->unsignedBigInteger('kelas_id');
             $table->foreign('kelas_id')->references('id')->on('kelas');
 
-            //Mata Pelajaran
+            //Foreign key : table Mata Pelajaran
             $table->unsignedBigInteger('mata_pelajaran_id');
             $table->foreign('mata_pelajaran_id')->references('id')->on('mata_pelajarans');
 
-            //Guru
-            $table->unsignedBigInteger('guru_id');
-            $table->foreign('guru_id')->references('id')->on('gurus');
+            //Foreign key : table Pengajar
+            $table->unsignedBigInteger('pengajar_id');
+            $table->foreign('pengajar_id')->references('id')->on('pengajars');
 
             $table->timestamps();
         });

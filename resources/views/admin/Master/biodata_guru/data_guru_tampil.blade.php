@@ -30,11 +30,7 @@
                     <div class="row justify-content-between">
                         <div class="col-md-4 text-center">
                             <div class="d-flex justify-content-center">
-                                          @if($data_guru->foto_guru != '')
-                                                <img src="{{url('storage/Pengajar/'. $data_guru->foto_guru) }}" class="rounded mb-2 w-full h-full" alt="" height="200px">    
-                                            @else
-                                                <img src="{{asset('pi_assets/images/profile.jpg') }}" class="rounded mb-2 w-full h-full" alt="" height="200px">    
-                                            @endif   
+                            <img src="{{asset('storage/Guru_image/'. $data_guru->foto_guru) }}" class="rounded mb-2 w-full h-full" alt="" height="200px">    
                             </div>
                             <div class="row pt-2">
                                     <div class="col-md-4 text-secondary">Nama</div>
@@ -51,9 +47,9 @@
                                 <hr>
                                     <div class="col-md-4 text-secondary">Jenis Kelamin</div>
                                     <div class="col-md-8"><h5>{{$data_guru->jenis_kelamin}}</h5></div>
-                                <hr>
+                                <!-- <hr>
                                     <div class="col-md-4 text-secondary">Wali Kelas</div>
-                                    <div class="col-md-8"><h5>{{ $data_guru->kelas ? $data_guru->kelas->nama_kelas : 'Bukan sebagai wali kelas' }}</h5></div>
+                                    <div class="col-md-8"><h5>{{ $data_guru->kelas ? $data_guru->kelas->nama_kelas : '' }}</h5></div> -->
                             </div>
                         </div>
                         <div class="col-md-7 pt-2 text-center">

@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Exports\ExportJadwalMengajarGuru;
-use App\Models\Guru;
-use App\Models\JadwalMengajarGuru;
-use App\Models\Kelas;
-use App\Models\MataPelajaran;
 use Carbon\Carbon;
+use App\Models\Kelas;
+use App\Models\Pengajar;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redirect;
+use App\Models\MataPelajaran;
+use App\Models\JadwalMengajarGuru;
 use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Support\Facades\Redirect;
+use App\Exports\ExportJadwalMengajarGuru;
 
 class JadwalMengajarGuruController extends Controller
 {
@@ -31,19 +31,19 @@ class JadwalMengajarGuruController extends Controller
     //Menampilkan detail jadwal mengajar guru
     public function tampil_jadwal_mengajar_guru(JadwalMengajarGuru $data_jadwal_mengajar_guru)
     {
-        $edit_guru = Guru::all();
+        $edit_pengajar = Pengajar::all();
         $edit_kelas = Kelas::all();
         $edit_mapel = MataPelajaran::all();
-        return view('admin.Jadwal_Mengajar.jadwal_mengajar_tampil', compact('data_jadwal_mengajar_guru', 'edit_guru', 'edit_kelas', 'edit_mapel'));
+        return view('admin.Jadwal_Mengajar.jadwal_mengajar_tampil', compact('data_jadwal_mengajar_guru', 'edit_kelas', 'edit_mapel','edit_pengajar'));
     }
 
     //Menambahkan jadwal mengajar guru
     public function tambah_jadwal_mengajar_guru()
     {
         $tambah_kelas = Kelas::all();
+        $tambah_pengajar = Pengajar::all();
         $tambah_mapel = MataPelajaran::all();
-        $tambah_guru = Guru::all();
-        return view('admin.Jadwal_Mengajar.jadwal_mengajar_tambah', compact('tambah_kelas', 'tambah_mapel', 'tambah_guru'));
+        return view('admin.Jadwal_Mengajar.jadwal_mengajar_tambah', compact('tambah_kelas', 'tambah_mapel','tambah_pengajar'));
     }
     //Proses menambahkan jadwal mengajar guru
     public function store_jadwal_mengajar_guru(Request $request)
@@ -55,17 +55,15 @@ class JadwalMengajarGuruController extends Controller
             'hari' => 'required',
         ));
 
-        $data_jadwal_mengajar_guru = new JadwalMengajarGuru();
-        $data_jadwal_mengajar_guru->tanggal = $request->tanggal;
-        $data_jadwal_mengajar_guru->waktu_mulai = $request->waktu_mulai;
-        $data_jadwal_mengajar_guru->waktu_selesai = $request->waktu_selesai;
-        $data_jadwal_mengajar_guru->hari = $request->hari;
-        $data_jadwal_mengajar_guru->guru_id = $request->guru_id;
-        $data_jadwal_mengajar_guru->kelas_id = $request->kelas_id;
-        $data_jadwal_mengajar_guru->mata_pelajaran_id = $request->mata_pelajaran_id;
-
-
-        $data_jadwal_mengajar_guru->save();
+       JadwalMengajarGuru::create([
+        'tanggal' => $request->tanggal,
+        'waktu_mulai' => $request->waktu_mulai,
+        'waktu_selesai' => $request->waktu_selesai,
+        'hari' => $request->hari,
+        'kelas_id' => $request->kelas_id,
+        'mata_pelajaran_id' => $request->mata_pelajaran_id,
+        'pengajar_id' => $request->pengajar_id,
+       ]);
 
         return Redirect::route('index_jadwal_mengajar_guru')
             ->with('success', 'Berhasil menambahkan jadwal mengajar!!');
@@ -75,10 +73,10 @@ class JadwalMengajarGuruController extends Controller
     public function edit_jadwal_mengajar_guru(JadwalMengajarGuru $data_jadwal_mengajar_guru)
     {
 
-        $edit_guru = Guru::all();
+        $edit_pengajar = Pengajar::all();
         $edit_kelas = Kelas::all();
         $edit_mapel = MataPelajaran::all();
-        return view('admin.Jadwal_Mengajar.jadwal_mengajar_edit', compact('data_jadwal_mengajar_guru', 'edit_guru', 'edit_kelas', 'edit_mapel'));
+        return view('admin.Jadwal_Mengajar.jadwal_mengajar_edit', compact('data_jadwal_mengajar_guru', 'edit_kelas', 'edit_mapel','edit_pengajar'));
     }
 
     public function update_jadwal_mengajar_guru(Request $request, JadwalMengajarGuru $data_jadwal_mengajar_guru)
@@ -96,9 +94,9 @@ class JadwalMengajarGuruController extends Controller
             'waktu_mulai' => $request->waktu_mulai,
             'waktu_selesai' => $request->waktu_selesai,
             'hari' => $request->hari,
-            'guru_id' => $request->guru_id,
             'kelas_id' => $request->kelas_id,
             'mata_pelajaran_id' => $request->mata_pelajaran_id,
+            'pengajar_id' => $request->pengajar_id,
         ]);
 
 

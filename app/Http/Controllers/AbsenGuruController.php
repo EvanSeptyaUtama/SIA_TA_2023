@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Exports\ExportAbsenGuru;
-use App\Models\AbsenGuru;
 use App\Models\Guru;
 use App\Models\Kelas;
-use App\Models\MataPelajaran;
+use App\Models\Pengajar;
+use App\Models\AbsenGuru;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redirect;
+use App\Models\MataPelajaran;
+use App\Exports\ExportAbsenGuru;
 use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Support\Facades\Redirect;
 
 class AbsenGuruController extends Controller
 {
@@ -21,11 +22,11 @@ class AbsenGuruController extends Controller
     {
         $data_absen_guru = AbsenGuru::all();
 
-        $gurus = Guru::all();
+        $pengajar = Pengajar::all();
         $kelas = Kelas::all();
         $mata_pelajarans = MataPelajaran::all();
 
-        return view('admin.Absensi.absen_guru.absen_guru', compact('data_absen_guru', 'gurus', 'kelas', 'mata_pelajarans'));
+        return view('admin.Absensi.absen_guru.absen_guru', compact('data_absen_guru', 'pengajar', 'kelas', 'mata_pelajarans'));
     }
 
     public function tampil_absen_guru(AbsenGuru $data_absen_guru)
@@ -46,20 +47,20 @@ class AbsenGuruController extends Controller
             'waktu_mulai_guru' => $request->waktu_mulai_guru,
             'waktu_selesai_guru' => $request->waktu_selesai_guru,
             'keterangan_guru' => $request->keterangan_guru,
-            'guru_id' => $request->guru_id,
+            'pengajar_id' => $request->pengajar_id,
             'kelas_id' => $request->kelas_id,
             'mata_pelajaran_id' => $request->mata_pelajaran_id,
         ]);
 
-        return Redirect::route('index_absen_guru')->with('success', 'Berhasil melakukan absen!!');
+        return Redirect::route('index_absen_guru')->with('success', 'Berhasil menambahkan absen guru!!');
     }
 
     public function edit_absen_guru(AbsenGuru $data_absen_guru)
     {
-        $edit_guru = Guru::all();
+        $edit_pengajar = Pengajar::all();
         $edit_kelas = Kelas::all();
         $edit_mata_pelajaran = MataPelajaran::all();
-        return view('admin.Absensi.absen_guru.absen_guru_edit', compact('data_absen_guru', 'edit_guru', 'edit_kelas', 'edit_mata_pelajaran'));
+        return view('admin.Absensi.absen_guru.absen_guru_edit', compact('data_absen_guru', 'edit_pengajar', 'edit_kelas', 'edit_mata_pelajaran'));
     }
 
     public function update_absen_guru(Request $request, AbsenGuru $data_absen_guru)
@@ -76,7 +77,7 @@ class AbsenGuruController extends Controller
             'waktu_mulai_guru' => $request->waktu_mulai_guru,
             'waktu_selesai_guru' => $request->waktu_selesai_guru,
             'keterangan_guru' => $request->keterangan_guru,
-            'guru_id' => $request->guru_id,
+            'pengajar_id' => $request->pengajar_id,
             'kelas_id' => $request->kelas_id,
             'mata_pelajaran_id' => $request->mata_pelajaran_id,
         ]);

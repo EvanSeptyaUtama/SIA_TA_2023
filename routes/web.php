@@ -1,42 +1,43 @@
 <?php
 
+use App\Models\JadwalMengajarGuru;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\GuruController;
+use Illuminate\Support\Facades\Redirect;
+use App\Http\Controllers\KelasController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PengajarController;
+use App\Http\Controllers\SemesterController;
 use App\Http\Controllers\AbsenGuruController;
+use App\Http\Controllers\Coba\KotaController;
+use App\Http\Controllers\InputDataController;
 use App\Http\Controllers\AbsenSiswaController;
 use App\Http\Controllers\AttendanceController;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\CartController;
-use App\Http\Controllers\Coba\KategoriController;
-use App\Http\Controllers\Coba\KotaController;
 use App\Http\Controllers\Coba\ProdukController;
+use App\Http\Controllers\TahunAjaranController;
 use App\Http\Controllers\Coba\StudentController;
-use App\Http\Controllers\GuruController;
-use App\Http\Controllers\InputDataController;
-use App\Http\Controllers\JadwalMengajarController;
-use App\Http\Controllers\JadwalMengajarGuruController;
-use App\Http\Controllers\KelasController;
+use App\Models\ProfilInstansi\InformasiAkademik;
+use App\Http\Controllers\Coba\KategoriController;
 use App\Http\Controllers\KepalaSekolahController;
 use App\Http\Controllers\MataPelajaranController;
-use App\Http\Controllers\OrderController;
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\JadwalMengajarController;
+use App\Http\Controllers\TahunPelajaranController;
+use App\Http\Controllers\JadwalMengajarGuruController;
+use App\Models\ProfilInstansi\InformasiPengumumanPPDB;
+use App\Http\Controllers\ProfilInstansi\SejarahController;
+use App\Http\Controllers\ProfilInstansi\VisiMisiController;
 use App\Http\Controllers\ProfilInstansi\AktivitasController;
-use App\Http\Controllers\ProfilInstansi\HalamanInformasiPengumumanController;
 use App\Http\Controllers\ProfilInstansi\HalamanPPDBController;
 use App\Http\Controllers\ProfilInstansi\HalamanUtamaController;
-use App\Http\Controllers\ProfilInstansi\InformasiAkademikController;
 use App\Http\Controllers\ProfilInstansi\ProfilinstansiController;
-use App\Http\Controllers\ProfilInstansi\SejarahController;
+use App\Http\Controllers\ProfilInstansi\InformasiAkademikController;
 use App\Http\Controllers\ProfilInstansi\SusunanOrganisasiController;
-use App\Http\Controllers\ProfilInstansi\VisiMisiController;
-use App\Http\Controllers\SemesterController;
-use App\Http\Controllers\SiswaController;
-use App\Http\Controllers\TahunAjaranController;
-use App\Http\Controllers\TahunPelajaranController;
-use App\Models\JadwalMengajarGuru;
-use App\Models\ProfilInstansi\InformasiAkademik;
-use App\Models\ProfilInstansi\InformasiPengumumanPPDB;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\ProfilInstansi\HalamanInformasiPengumumanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -78,9 +79,9 @@ Route::middleware(['admin'])->group(function () {
     //Master - Data Siswa
     Route::get('/Data Siswa', [SiswaController::class, 'index_siswa'])->name('index_siswa');
     Route::get('/Export_excel_siswa', [SiswaController::class, 'eksport_excel'])->name('eksport_excel_siswa');
-    Route::post('/Import_excel_siswa', [SiswaController::class, 'import_excel'])->name('import_excel');
+    // Route::post('/Import_excel_siswa', [SiswaController::class, 'import_excel'])->name('import_excel');
     Route::get('/Detail Siswa/{data_siswa}', [SiswaController::class, 'tampil_siswa'])->name('tampil_siswa');
-    Route::get('/Tambah Siswa', [SiswaController::class, 'tambah_siswa'])->name('tambah_siswa');
+    // Route::get('/Tambah Siswa', [SiswaController::class, 'tambah_siswa'])->name('tambah_siswa');
     Route::post('/Tambah Siswa/store', [SiswaController::class, 'store_siswa'])->name('store_siswa');
     Route::get('/Edit Siswa/{data_siswa}/edit', [SiswaController::class, 'edit_siswa'])->name('edit_siswa');
     Route::patch('/Edit Siswa/{data_siswa}/update', [SiswaController::class, 'update_siswa'])->name('update_siswa');
@@ -89,14 +90,22 @@ Route::middleware(['admin'])->group(function () {
     //Master - Data Guru
     Route::get('/admin_guru/data_guru', [GuruController::class, 'index_guru'])->name('index_guru');
     Route::get('/Export_guru_excel', [GuruController::class, 'eksport_excel_guru'])->name('eksport_excel_guru');
-    Route::post('/import_guru_excel', [GuruController::class, 'import_guru_excel'])->name('import_guru_excel');
+    // Route::post('/import_guru_excel', [GuruController::class, 'import_guru_excel'])->name('import_guru_excel');
     Route::get('/Tambah Data Guru', [GuruController::class, 'tambah_guru'])->name('tambah_guru');
-    Route::post('/Store Data Guru', [GuruController::class, 'store_guru'])->name('store_guru');
+    Route::post('/Storedata)guru', [GuruController::class, 'store_guru'])->name('store_guru');
     Route::get('/admin_guru/{data_guru}', [GuruController::class, 'tampil_guru'])->name('tampil_guru');
     Route::get('/admin_guru/{data_guru}/edit', [GuruController::class, 'edit_guru'])->name('edit_guru');
     Route::patch('/admin_guru/{data_guru}/update', [GuruController::class, 'update_guru'])->name('update_guru');
     Route::delete('/admin_guru/{data_guru}', [GuruController::class, 'hapus_guru'])->name('hapus_guru');
 
+    //Data Pengajar
+    Route::get('/Pengajar', [PengajarController::class,'index_pengajar'])->name('index_pengajar');
+    Route::get('/Pengajar_tampil/{data_pengajar}', [PengajarController::class,'tampil_pengajar'])->name('tampil_pengajar');
+    Route::post('/Pengajar_store', [PengajarController::class,'store_pengajar'])->name('store_pengajar');
+    Route::get('/Pengajar_edit/{data_pengajar}', [PengajarController::class,'edit_pengajar'])->name('edit_pengajar');
+    Route::patch('/Pengajar_update/{data_pengajar}', [PengajarController::class,'update_pengajar'])->name('update_pengajar');
+    Route::delete('/Pengajar_hapus/{data_pengajar}', [PengajarController::class, 'hapus_pengajar'])->name('hapus_pengajar');
+    Route::get('/Export_pengajar_excel', [PengajarController::class, 'eksport_excel_pengajar'])->name('eksport_excel_pengajar');
     //Umum - Data Kelas
     Route::get('/Kelas', [KelasController::class, 'index_kelas'])->name('index_kelas');
     // Route::get('/Tampil_kelas_siswa', [KelasController::class, 'kelas_siswa'])->name('index_kelas_siswa');
@@ -225,8 +234,8 @@ Route::middleware(['admin'])->group(function () {
     Route::get('/Export_excel_absen_guru', [AbsenGuruController::class, 'eksport_excel_absen_guru'])->name('eksport_excel_absen_guru');
     Route::get('/Absen_Guru/{data_absen_guru}/Detail_Absen', [AbsenGuruController::class, 'tampil_absen_guru'])->name('tampil_absen_guru');
     Route::post('/Absen_Guru/tambah', [AbsenGuruController::class, 'store_absen_guru'])->name('store_absen_guru');
-    Route::get('/Absen_Guru/{data_absen_guru}/edit', [AbsenGuruController::class, 'edit_absen_guru'])->name('edit_absen_guru');
-    Route::patch('/Absen_Guru/{data_absen_guru}/edit', [AbsenGuruController::class, 'update_absen_guru'])->name('update_absen_guru');
+    Route::get('/Absen_Guru/{data_absen_guru}', [AbsenGuruController::class, 'edit_absen_guru'])->name('edit_absen_guru');
+    Route::patch('/Absen_Guru/{data_absen_guru}', [AbsenGuruController::class, 'update_absen_guru'])->name('update_absen_guru');
     Route::delete('/Absen_Guru/{data_absen_guru}', [AbsenGuruController::class, 'hapus_absen_guru'])->name('hapus_absen_guru');
 
     //Jadwal Mengajar Guru

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Kelas;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 
@@ -26,12 +26,6 @@ class KelasController extends Controller
         return view('admin.umum.kelas.kelas.index_kelas', compact('data_kelas'));
     }
 
-    // public function kelas_siswa()
-    // {
-    //     $data_kelas = Kelas::with('siswas')->get();
-    //     return view('admin.umum.kelas.kelas1.index_kelas1',compact('data_kelas'));
-    // }
-
     public function tambah_kelas()
     {
         return view('admin.umum.kelas.umum_kelas_tambah');
@@ -46,7 +40,7 @@ class KelasController extends Controller
         ]);
 
         Kelas::create([
-            'nama_kelas' => $request->nama_kelas
+            'nama_kelas' => $request->nama_kelas,
         ]);
 
         return Redirect::route('index_kelas')->with('success', 'Berhasil menambahkan data kelas!!');
@@ -63,7 +57,7 @@ class KelasController extends Controller
         ]);
 
         $data_kelas->update([
-            'nama_kelas' => $request->nama_kelas
+            'nama_kelas' => $request->nama_kelas,
         ]);
 
         return Redirect::route('index_kelas', $data_kelas)->with('success', 'Berhasil mengedit data kelas!!');

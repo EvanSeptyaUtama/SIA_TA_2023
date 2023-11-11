@@ -56,13 +56,13 @@
                                         <input type="text" name="hari"  value="{{$data_jadwal_mengajar_guru->hari}}" placeholder="Contoh : Senin, Selasa, dll..." class="form-control">
                                     </div>
                                 </div>
-                                 <!--Foreign key : Table Guru--->
+                                 <!--Foreign key : Table Pengajar--->
                                 <div class="row mb-2">
-                                    <label class="col-sm-2 col-label-form">Guru</label>
+                                    <label class="col-sm-2 col-label-form">Pengajar</label>
                                     <div class="col-sm-10">
-                                        <select name="guru_id" class="form-control" >
-                                            @foreach ($edit_guru as $item)
-                                                <option value="{{$item->id}}" {{$data_jadwal_mengajar_guru->guru_id == $item->id ? 'selected':'' }}>{{$item->nama_guru}}</option>
+                                        <select name="pengajar_id" class="form-control" >
+                                            @foreach ($edit_pengajar as $item)
+                                                <option value="{{$item->id}}" {{$data_jadwal_mengajar_guru->pengajar_id == $item->id ? 'selected':'' }}>{{$item->nama_pengajar}}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -126,8 +126,8 @@
                                 </div>
                                 <hr>
                                 <div class="row">
-                                    <label for="">Guru</label>
-                                    <div class=""><h4><strong>{{$data_jadwal_mengajar_guru->gurus->nama_guru}}</strong></h4></div>
+                                    <label for="">Pengajar</label>
+                                    <div class=""><h4><strong>{{$data_jadwal_mengajar_guru->pengajar->nama_pengajar}}</strong></h4></div>
                                 </div>
                                 <div class="row">
                                     <label for="">Kelas</label>

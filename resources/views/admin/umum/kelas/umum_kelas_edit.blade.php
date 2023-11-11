@@ -58,9 +58,9 @@
                     @method('patch')
                     @csrf
                         <div class="form-group">
-                        <label>Kelas</label>
-                        <input type="text" name="nama_kelas" placeholder="Nama Kelas" class="form-control"
-                            value="{{ $data_kelas->nama_kelas }}">
+                            <label>Kelas</label>
+                            <input type="text" name="nama_kelas" placeholder="Nama Kelas" class="form-control"
+                                value="{{ $data_kelas->nama_kelas }}">
                         </div>
                         <button type="submit" class="btn btn-primary mt-3">Submit</button>
                     </form>

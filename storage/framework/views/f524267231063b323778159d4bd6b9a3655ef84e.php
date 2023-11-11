@@ -102,17 +102,17 @@
                                 <input type="file" name="foto_siswa" class="form-control">
                             </div>
                         </div>
-                        <!-----foreign key table kelas-->
-                        <div class="row mb-2">
-                            <label class="col-sm-2 col-label-form">Kelas</label>
-                            <div class="col-sm-10">
-                                <select name="kelas_id" class="form-control" class="form-control" >
-                                    <?php $__currentLoopData = $edit_kelas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                        <option value="<?php echo e($item->id); ?>" <?php echo e($data_siswa->kelas_id == $item->id ? 'selected':''); ?>><?php echo e($item->nama_kelas); ?></option>
-                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                </select>
+                            <!-----foreign key table kelas-->
+                            <div class="row mb-2">
+                                <label class="col-sm-2 col-label-form">Kelas</label>
+                                <div class="col-sm-10">
+                                    <select name="kelas_id" class="form-control" class="form-control" >
+                                        <?php $__currentLoopData = $edit_kelas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                            <option value="<?php echo e($item->id); ?>" <?php echo e($data_siswa->kelas_id == $item->id ? 'selected':''); ?>><?php echo e($item->nama_kelas); ?></option>
+                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
                         <div class="row mb-2">
                             <label class="col-sm-2 col-label-form">Jenis Kelamin</label>
                             <div class="col-sm-10">

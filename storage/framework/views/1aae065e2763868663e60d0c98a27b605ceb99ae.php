@@ -22,8 +22,16 @@
                         <input type="text" name="nama_guru" placeholder="Nama Lengkap" class="form-control">
                     </div>
                 </div>
+                
+                
+                <div class="row mb-2">
+                    <label class="col-sm-3 col-label-form">Foto</label>
+                    <div class="col-sm-9">
+                        <input class="form-control" type="file" name="foto_guru">
+                    </div>
+                </div>
                  <!---Foreign key table kelas---->
-                 <div class="row mb-3">
+                 <!-- <div class="row mb-3">
                     <label class="col-sm-3 col-label-form">Wali Kelas <i>(opsional)</i></label>
                     <div class="col-sm-9">
                         <select name="kelas_id" class="form-control" >
@@ -33,7 +41,7 @@
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </select>
                     </div>
-                </div>
+                </div> -->
                 <div class="row mb-2">
                     <label class="col-sm-3 col-label-form">Telepon</label>
                     <div class="col-sm-9">
@@ -54,7 +62,7 @@
                 <div class="row mb-2">
                     <label class="col-sm-3 col-label-form">Alamat</label>
                     <div class="col-sm-9">
-                        <input type="text" name="alamat_guru" placeholder="Alamat Lengkap" class="form-control">
+                        <textarea type="text" name="alamat_guru" placeholder="Alamat Lengkap" class="form-control" rows="4"></textarea>
                     </div>
                 </div>
 
@@ -69,13 +77,6 @@
                     <label class="col-sm-3 col-label-form">Tanggal Lahir</label>
                     <div class="col-sm-9">
                         <input type="date" name="ttl" class="form-control">
-                    </div>
-                </div>
-                
-                <div class="row mb-2">
-                    <label class="col-sm-3 col-label-form">Foto</label>
-                    <div class="col-sm-9">
-                        <input class="form-control rounded" type="file" name="foto_guru">
                     </div>
                 </div>
                 
