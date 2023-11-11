@@ -48,7 +48,9 @@
                             <th scope="col">Yayasan</th>
                             <th scope="col">Instansi</th>
                             <th scope="col">Penjelasan</th>
-                            <th scope="col">Gambar</th>
+                            <th scope="col">Deskripsi & Gambar 1</th>
+                            <th scope="col">Deskripsi & Gambar 2</th>
+                            <th scope="col">Deskripsi & Gambar 3</th>
                             <th scope="col">Aksi</th>
                         </tr>
                     </thead>
@@ -59,7 +61,16 @@
                                 <td>{{$data->nama_instansi}}</td>
                                 <td>{{$data->penjelasan}}</td>
                                 <td>
-                                    <img src="{{ url('storage/' . $data->gambar) }}" class="rounded" style="width: 100px">
+                                    {{$data->deskripsi_gambar1}} <hr>
+                                    <img src="{{ url('storage/Halaman_Utama1/' . $data->gambar_pertama) }}" class="img-index_admin" >
+                                </td>
+                                <td>
+                                <p>{{$data->deskripsi_gambar2}}</p> <hr>
+                                    <img src="{{ url('storage/Halaman_Utama2/' . $data->gambar_kedua) }}" class="img-index_admin">
+                                </td>
+                                <td> 
+                                {{$data->deskripsi_gambar3}} <hr>
+                                    <img src="{{ url('storage/Halaman_Utama3/' . $data->gambar_ketiga) }}" class="img-index_admin">
                                 </td>
                                 <td class="text-center">
                                     <div>

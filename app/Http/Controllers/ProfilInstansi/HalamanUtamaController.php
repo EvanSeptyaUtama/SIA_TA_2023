@@ -38,19 +38,38 @@ class HalamanUtamaController extends Controller
             'nama_yayasan' => 'required',
             'nama_instansi' => 'required',
             'penjelasan' => 'required',
-            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:3048',
+            'deskripsi_gambar1'=> 'required',
+            'deskripsi_gambar2'=> 'required',
+            'deskripsi_gambar3'=> 'required',
+            'gambar_pertama' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp',
+            'gambar_kedua' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp',
+            'gambar_ketiga' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp',
         ]);
 
-        $file = $request->file('gambar');
-        $path = time() . '_' . $request->nama_instansi . '.' . $file->getClientOriginalExtension();
+       
 
-        Storage::disk('local')->put('public/' . $path, file_get_contents($file));
+        $file1 = $request->file1('gambar_pertama');
+        $path1 = time() . '_' . $request->nama_instansi . '.' . $file1->getClientOriginalExtension();
+        Storage::disk('local')->put('public/Halaman_Utama/' . $path1, file_get_contents($file1));
+
+        $file2 = $request->file2('gambar_kedua');
+        $path2 = time() . '_' . $request->nama_instansi . '.' . $file2->getClientOriginalExtension();
+        Storage::disk('local')->put('public/Halaman_Utama/' . $path2, file_get_contents($file2));
+        
+        $file3 = $request->file3('gambar_ketiga');
+        $path3 = time() . '_' . $request->nama_instansi . '.' . $file3->getClientOriginalExtension();
+        Storage::disk('local')->put('public/Halaman_Utama/' . $path3, file_get_contents($file3));
 
         HalamanUtama::create([
             'nama_yayasan' => $request->nama_yayasan,
             'nama_instansi' => $request->nama_instansi,
             'penjelasan' => $request->penjelasan,
-            'gambar' => $path,
+            'deskripsi_gambar1'=> $request->deskripsi_gambar1,
+            'deskripsi_gambar2'=> $request->deskripsi_gambar2,
+            'deskripsi_gambar3'=> $request->deskripsi_gambar3,
+            'gambar_pertama' => $path1,
+            'gambar_kedua' => $path2,
+            'gambar_ketiga' => $path3,
         ]);
 
         return Redirect::route('index_halaman_utama')->with('success', 'Berhasil menambahkan data pada halaman utama!!');
@@ -71,21 +90,36 @@ class HalamanUtamaController extends Controller
             'nama_yayasan' => 'required',
             'nama_instansi' => 'required',
             'penjelasan' => 'required',
-            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'deskripsi_gambar1'=> 'required',
+            'deskripsi_gambar2'=> 'required',
+            'deskripsi_gambar3'=> 'required',
+            'gambar_pertama' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp',
+            'gambar_kedua' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp',
+            'gambar_ketiga' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp',
         ]);
 
-        $file = $request->file('gambar');
-        $path = time() . '_' . $request->nama_instansi . '.' . $file->getClientOriginalExtension();
+        $file1 = $request->file('gambar_pertama');
+        $path1 = time() . '_' . $request->nama_instansi . '.' . $file1->getClientOriginalExtension();
+        Storage::disk('local')->put('public/Halaman_Utama1/' . $path1, file_get_contents($file1));
 
-        Storage::disk('local')->put('public/' . $path, file_get_contents($file));
-        // $gambar = $request->file('gambar');
-        // $gambar->storeAs('public/', $gambar->hashName());
+        $file2 = $request->file('gambar_kedua');
+        $path2 = time() . '_' . $request->nama_instansi . '.' . $file2->getClientOriginalExtension();
+        Storage::disk('local')->put('public/Halaman_Utama2/' . $path2, file_get_contents($file2));
+        
+        $file3 = $request->file('gambar_ketiga');
+        $path3 = time() . '_' . $request->nama_instansi . '.' . $file3->getClientOriginalExtension();
+        Storage::disk('local')->put('public/Halaman_Utama3/' . $path3, file_get_contents($file3));
 
         $halaman_utama->update([
             'nama_yayasan' => $request->nama_yayasan,
             'nama_instansi' => $request->nama_instansi,
             'penjelasan' => $request->penjelasan,
-            'gambar' => $path,
+            'deskripsi_gambar1'=> $request->deskripsi_gambar1,
+            'deskripsi_gambar2'=> $request->deskripsi_gambar2,
+            'deskripsi_gambar3'=> $request->deskripsi_gambar3,
+            'gambar_pertama' => $path1,
+            'gambar_kedua' => $path2,
+            'gambar_ketiga' => $path3,
         ]);
 
         return Redirect::route('index_halaman_utama', $halaman_utama)->with('success', 'Berhasil mengedit data halaman utama!!');

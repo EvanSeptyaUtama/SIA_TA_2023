@@ -61,8 +61,31 @@
                                 value="{{ $halaman_utama->penjelasan }}">
                         </div>
                         <div class="form-group">
-                            <label>Gambar</label>
-                            <input type="file" name="gambar"class="form-control">
+                            <label>Deskripsi Gambar 1</label>
+                            <input type="text" name="deskripsi_gambar1"class="form-control"
+                                value="{{ $halaman_utama->deskripsi_gambar1 }}">
+                        </div>
+                        <div class="form-group">
+                            <label>Gambar Pertama</label>
+                            <input type="file" name="gambar_pertama"class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Deskripsi Gambar 2</label>
+                            <input type="text" name="deskripsi_gambar2"class="form-control"
+                                value="{{ $halaman_utama->deskripsi_gambar2 }}">
+                        </div>
+                        <div class="form-group">
+                            <label>Gambar Kedua</label>
+                            <input type="file" name="gambar_kedua"class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Deskripsi Gambar 3</label>
+                            <input type="text" name="deskripsi_gambar3"class="form-control"
+                                value="{{ $halaman_utama->deskripsi_gambar3 }}">
+                        </div>
+                        <div class="form-group">
+                            <label>Gambar Ketiga</label>
+                            <input type="file" name="gambar_ketiga"class="form-control">
                         </div>
                         <button type="submit" class="btn btn-primary mt-3">Submit data</button>
                     </form>

@@ -5,13 +5,53 @@
       <div class="container">
         <div class="row">
           @foreach($data_hal_utama as $data)
-            <div  class="col-lg-6 d-flex flex-column justify-content-center">
+            <div  class="col-lg-5 d-flex flex-column justify-content-center">
               <h1>{{$data->nama_yayasan}}</h1>
               <h2 style="font-display: bold">{{$data->nama_instansi}}</h2>
               <p>{{$data->penjelasan}}</p>
+              <a type="button" class="btn btn-outline-dark" href="{{route('index_halaman_web_ppdb')}}"><strong>Pendaftaran Peserta Didik Baru</strong></a>
             </div>
-            <div class="col-lg-6 mt-1"  >
-              <img src="{{ url('storage/'. $data->gambar) }}" class="img-fluid rounded"  alt="">
+            <div class="col-lg-7 mt-1"  >
+              <!-- <img src="{{ url('storage/'. $data->gambar) }}" class="img-fluid rounded"  alt=""> -->
+              <!----Carousel--->
+              <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                  <img src="{{ url('storage/Halaman_Utama1/'. $data->gambar_pertama) }}" class="rounded img-fluid" width="700" height="500"  alt="">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><strong>STAR GENERATION</strong></h5>
+                      <p>{{$data->deskripsi_gambar1}}</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                  <img src="{{ url('storage/Halaman_Utama2/'. $data->gambar_kedua) }}" class="rounded img-fluid" width="700" height="500" alt="">
+                    <div class="carousel-caption d-none d-md-block">
+                    <h5><strong>STAR GENERATION</strong></h5>
+                      <p>{{$data->deskripsi_gambar2}}</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                  <img src="{{ url('storage/Halaman_Utama3/'. $data->gambar_ketiga) }}" class="rounded img-fluid" width="700" height="500"  alt="">
+                    <div class="carousel-caption d-none d-md-block">
+                    <h5><strong>STAR GENERATION</strong></h5>
+                      <p>{{$data->deskripsi_gambar3}}</p>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
             </div>
           @endforeach
         </div>

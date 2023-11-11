@@ -133,7 +133,12 @@ class DatabaseSeeder extends Seeder
                 'nama_yayasan' => 'Yayasan Duta Serega',
                 'nama_instansi' => 'STAR GENERATION',
                 'penjelasan' => 'SEKOLAH DENGAN PEMBINAAN KARAKTER YANG   UNGGUL',
-                'gambar' => 'stargen.png',
+                'deskripsi_gambar1' => 'Gambar sekolah tampak depan',
+                'deskripsi_gambar2' => 'Seluruh Guru pada Star Generation',
+                'deskripsi_gambar3' => 'Upacara pada star generation',
+                'gambar_pertama' => 'stargen1.png',
+                'gambar_kedua' => 'stargen2.png',
+                'gambar_ketiga' => 'stargen3.png',
             ]
         ]);
 

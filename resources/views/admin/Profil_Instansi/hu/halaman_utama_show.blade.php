@@ -18,7 +18,12 @@
                         <p>Nama Yayasan : {{$halaman_utama->nama_yayasan}}</p>
                         <p>Nama Isntansi : {{$halaman_utama->nama_instansi}}</p>
                         <p>Penjelasan : {{$halaman_utama->penjelasan}}</p>
-                        <img src="{{url('storage/'. $halaman_utama->gambar) }}" class="rounded" alt="" height="200px">
+                        <p>Deskripsi Gambar 1 : {{$halaman_utama->deskripsi_gambar1}}</p>
+                        <p>Deskripsi Gambar 1 : {{$halaman_utama->deskripsi_gambar2}}</p>
+                        <p>Deskripsi Gambar 1 : {{$halaman_utama->deskripsi_gambar3}}</p>
+                        <img src="{{url('storage/Halaman_Utama1/'. $halaman_utama->gambar_pertama) }}" class="rounded  mb-1" alt="" width="200px" height="200px">
+                        <img src="{{url('storage/Halaman_Utama2/'. $halaman_utama->gambar_kedua) }}" class="rounded mb-1" alt="" width="200px" height="200px">
+                        <img src="{{url('storage/Halaman_Utama3/'. $halaman_utama->gambar_ketiga) }}" class="rounded" alt="" width="200px" height="200px">
                     
                 </div>
             </div>

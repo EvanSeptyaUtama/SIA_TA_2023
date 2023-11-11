@@ -18,7 +18,12 @@ return new class extends Migration
             $table->string('nama_yayasan');
             $table->string('nama_instansi');
             $table->text('penjelasan');
-            $table->string('gambar');
+            $table->string('deskripsi_gambar1');
+            $table->string('deskripsi_gambar2');
+            $table->string('deskripsi_gambar3');
+            $table->string('gambar_pertama');
+            $table->string('gambar_kedua');
+            $table->string('gambar_ketiga');
             $table->timestamps();
         });
     }

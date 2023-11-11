@@ -46,9 +46,6 @@
             <li><a class="nav-link scrollto active" href="#hero_ppdb">Home</a></li>
             <li><a class="nav-link scrollto" href="#info_pengumuman">Informasi Pengumuman</a></li>
           </ul>
-          <div class="pl-4">
-            <i class="bi bi-list mobile-nav-toggle"></i>
-          </div>
           
         </nav><!-- .navbar -->
   

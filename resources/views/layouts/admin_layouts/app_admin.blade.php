@@ -110,6 +110,10 @@
     .box-link-ha{
         list-style-type: none;
     }
+    /* .img-carousel-hu{
+        width: 10px;
+        height: 40%;
+    } */
     .car-body-icon {
         position: absolute;
         z-index: 0;
