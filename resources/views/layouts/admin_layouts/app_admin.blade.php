@@ -275,7 +275,7 @@
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="{{ route('index_absen_siswa') }}">Absensi</a></li>
                                     {{-- <li><a class="dropdown-item" href="{{ route('calculate_view') }}">Calculate</a></li> --}}
-                                    <li><a class="dropdown-item" href="{{ route('index_absen_siswa') }}">Rekab Absensi</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('index_rekap_absen_siswa') }}">Rekab Absensi</a></li>
                                     {{-- <li><a class="dropdown-item" href="">Laporan Harian</a></li> --}}
                                     {{-- <li><a class="dropdown-item" href="">Laporan Bulanan</a></li> --}}
                                 </ul>

@@ -35,6 +35,80 @@ class AbsenSiswaController extends Controller
         return view('admin.Absensi.absen_siswa.absen_siswa', compact('data_absen_siswa', 'kelas', 'siswas', 'tahun_pelajarans'));
     }
 
+    public function index_rekap_absen_siswa()
+    {
+        $rekapAbsensi = [];
+        $tanggal_awal = null;
+
+        return view('admin.Absensi.absen_siswa.rekap_siswa', compact('rekapAbsensi', 'tanggal_awal'));
+    }
+
+    public function rekap_absen_siswa(Request $request)
+    {        
+        $tanggal_hari_ini = Carbon::now()->format('Y-m-d');
+        $request->validate([
+            'tanggal_awal' => 'required|date',
+        ]);
+
+        // Tentukan rentang waktu dari input user
+        $tanggal_awal = $request->input('tanggal_awal');
+
+        $rekapAbsensi = $this->get_rekap_absen_siswa($tanggal_awal, $tanggal_hari_ini);
+
+        return view('admin.Absensi.absen_siswa.rekap_siswa', compact('rekapAbsensi', 'tanggal_awal'))->with('success', 'Berhasil menampilkan data rekap absensi!!');
+    }
+
+    private function get_rekap_absen_siswa($tanggal_awal, $tanggal_akhir)
+    {
+        $rekapAbsensi = DB::table('siswas')
+            ->select(
+                'siswas.id',
+                'siswas.nisn',
+                'siswas.nama_siswa',
+                DB::raw(('COUNT(absen_siswa.id) as jumlah_absensi')),
+                DB::raw('SUM(CASE WHEN absen_siswa.keterangan = "Hadir" THEN 1 ELSE 0 END) as jumlah_hadir'),
+                DB::raw('SUM(CASE WHEN absen_siswa.keterangan = "Sakit" THEN 1 ELSE 0 END) as jumlah_sakit'),
+                DB::raw('SUM(CASE WHEN absen_siswa.keterangan = "Izin" THEN 1 ELSE 0 END) as jumlah_ijin'),
+                DB::raw('SUM(CASE WHEN absen_siswa.keterangan = "Alpha" THEN 1 ELSE 0 END) as jumlah_alpa'),
+                DB::raw('SUM(CASE WHEN absen_siswa.keterangan = "Hadir" THEN 1 ELSE 0 END) / COUNT(absen_siswa.id) * 100 as persentase_kehadiran')
+            )
+            ->leftJoin('absen_siswa', 'siswas.id', '=', 'absen_siswa.siswa_id')
+            ->where(function ($query) use ($tanggal_awal, $tanggal_akhir) {
+                $query->whereBetween('absen_siswa.tanggal_absen', [$tanggal_awal, $tanggal_akhir])
+                    ->orWhereNull('absen_siswa.siswa_id');
+            })
+            ->groupBy('siswas.id', 'siswas.nisn', 'siswas.nama_siswa')
+            ->get();
+
+        return $rekapAbsensi;
+    }
+
+    // public function index_rekap_absen_siswa()
+    // {
+    //     $tanggal_hari_ini = Carbon::now()->format('Y-m-d');
+    //     $tanggal_awal = new Carbon('2020-01-01');
+
+    //     $rekapAbsensi = DB::table('siswas')
+    //         ->select(
+    //             'siswas.id',
+    //             'siswas.nisn',
+    //             'siswas.nama_siswa',
+    //             DB::raw(('COUNT(absen_siswa.id) as jumlah_absensi')),
+    //             DB::raw('COALESCE(SUM(CASE WHEN absen_siswa.keterangan = "Hadir" THEN 1 ELSE 0 END), 0) as jumlah_hadir'),
+    //             DB::raw('COALESCE(SUM(CASE WHEN absen_siswa.keterangan = "Sakit" THEN 1 ELSE 0 END), 0) as jumlah_sakit'),
+    //             DB::raw('COALESCE(SUM(CASE WHEN absen_siswa.keterangan = "Izin" THEN 1 ELSE 0 END), 0) as jumlah_ijin'),
+    //             DB::raw('SUM(CASE WHEN absen_siswa.keterangan = "Hadir" THEN 1 ELSE 0 END) / COUNT(absen_siswa.id) * 100 as persentase_kehadiran')
+    //         )
+    //         ->leftJoin('absen_siswa', 'siswas.id', '=', 'absen_siswa.siswa_id')
+    //         ->where(function ($query) use ($tanggal_awal, $tanggal_hari_ini) {
+    //             $query->whereBetween('absen_siswa.tanggal_absen', [$tanggal_awal, $tanggal_hari_ini])
+    //                 ->orWhereNull('absen_siswa.siswa_id');
+    //         })
+    //         ->groupBy('siswas.id', 'siswas.nisn', 'siswas.nama_siswa')
+    //         ->get();
+    //     return view('admin.Absensi.absen_siswa.rekap_siswa', compact('rekapAbsensi'));
+    // }
+
     public function tampil_absen_siswa(AbsenSiswa $data_absen_siswa)
     {
 

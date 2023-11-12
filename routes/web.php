@@ -204,6 +204,11 @@ Route::middleware(['admin'])->group(function () {
     Route::delete('/Hapus Informasi Pengumuman/{data_ip_ppdb}/hapus', [HalamanInformasiPengumumanController::class, 'hapus_halaman_ip_ppdb'])->name('hapus_halaman_ip_ppdb');
 
     //Absen Siswa
+
+    Route::post('/Absen_Siswa_Rekap', [AbsenSiswaController::class, 'rekap_absen_siswa'])->name('rekap_absen_siswa'); //halaman admin
+    Route::get('/Absen_Siswa_Rekap', [AbsenSiswaController::class, 'index_rekap_absen_siswa'])->name('index_rekap_absen_siswa'); //halaman admin
+
+
     Route::get('/Absen_Siswa', [AbsenSiswaController::class, 'index_absen_siswa'])->name('index_absen_siswa'); //halaman admin
     Route::get('/Absen_Siswa/{data_absen_siswa}/Detail_Absen', [AbsenSiswaController::class, 'tampil_absen_siswa'])->name('tampil_absen_siswa');
     Route::post('/Absen_Siswa/tambah', [AbsenSiswaController::class, 'store_absen_siswa'])->name('store_absen_siswa');
