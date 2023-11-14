@@ -9,8 +9,10 @@
         <div class="card border-dark">
             <div class="row m-2">
                 <div class="col-md-12">
-                    <h2>Rekapitulasi Absensi </h2>
-                    <h4>Hasil rekapitulasi absensi murid mulai pada tanggal <?php echo e($tanggal_awal); ?></h4>
+                    <h2>Rekapitulasi Absensi Siswa</h2>
+                    <?php if(!is_null($tanggalFormatted)): ?>
+                        <h5>Hasil rekapitulasi absensi siswa mulai dari tanggal <?php echo e($tanggalFormatted); ?> : </h5>
+                    <?php endif; ?>
                     <form action="<?php echo e(route('index_rekap_absen_siswa')); ?>" method="post" enctype="multipart/form-data">
                         <?php echo csrf_field(); ?>
                         <div class="row mb-4">

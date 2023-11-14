@@ -33,7 +33,7 @@
                         <div class="col-md-4 mb-2">
                           <div class="form-group ">
                             <label class="col-sm-2 col-label-form"><strong>Guru</strong></label>
-                            <select name="guru_id" class="form-control border-dark" class="col-sm-10" >
+                            <select name="guru_id" class="form-control select_guru border-dark" class="col-sm-10" >
                               <option value="">- Pilih Guru -</option> 
                                 @foreach ($gurus as $item)
                                     <option value="{{$item->id}}">{{$item->nama_guru}}</option>
@@ -195,4 +195,6 @@
      
         
     </div>
+
+
 @endsection

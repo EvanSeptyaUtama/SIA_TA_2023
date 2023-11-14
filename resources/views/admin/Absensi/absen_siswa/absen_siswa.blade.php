@@ -65,6 +65,7 @@
                       <div class="row">
                         <!--Input Foreign key : table siswa dan table kelas-->
                         <div class="col-md-4 mb-2">
+                          
                           <div class="form-group ">
                             <label class="col-sm-2 col-label-form"><strong>Siswa</strong></label>
                             <select name="siswa_id" class="form-control border-dark" class="col-sm-10" >
@@ -247,3 +248,4 @@
       </div>
     </div>
 @endsection
+

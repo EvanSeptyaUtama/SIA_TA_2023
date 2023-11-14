@@ -20,15 +20,21 @@
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
      <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
      <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.bootstrap5.min.css">
- 
-     <script defer src="https://code.jquery.com/jquery-3.7.0.js"></script>
+
+     
+
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js" integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
      <script defer src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
      <script defer src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
      <script defer src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
      <script defer src="https://cdn.datatables.net/responsive/2.5.0/js/responsive.bootstrap5.min.js"></script>
      <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    
-      <script defer src="<?php echo e(asset('pi_assets/js/main.js')); ?>"></script>
+
+     <script defer src="<?php echo e(asset('pi_assets/js/main.js')); ?>"></script>
+      
 </head>
 <style>
     .main{
@@ -140,7 +146,6 @@
         border: 1px solid;
         border-radius: 20px;
     } */
-   
 
 </style>
 <body>
@@ -286,6 +291,7 @@
                                 <div class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">Guru</div>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="<?php echo e(route('index_absen_guru')); ?>">Absensi</a></li>
+                                    <li><a class="dropdown-item" href="<?php echo e(route('index_rekap_absen_guru')); ?>">Rekab Absensi</a></li>
                                 </ul>
                             </div>
                             <!---Menu Coba--->

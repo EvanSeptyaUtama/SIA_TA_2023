@@ -33,7 +33,7 @@
                         <div class="col-md-4 mb-2">
                           <div class="form-group ">
                             <label class="col-sm-2 col-label-form"><strong>Guru</strong></label>
-                            <select name="guru_id" class="form-control border-dark" class="col-sm-10" >
+                            <select name="guru_id" class="form-control select_guru border-dark" class="col-sm-10" >
                               <option value="">- Pilih Guru -</option> 
                                 <?php $__currentLoopData = $gurus; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <option value="<?php echo e($item->id); ?>"><?php echo e($item->nama_guru); ?></option>
@@ -198,5 +198,7 @@
      
         
     </div>
+
+
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layouts.admin_layouts.app_admin', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Preinan\sistem_absen\SIA_TA_2023\resources\views/admin/Absensi/absen_guru/absen_guru.blade.php ENDPATH**/ ?>

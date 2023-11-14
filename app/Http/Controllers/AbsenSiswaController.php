@@ -38,9 +38,9 @@ class AbsenSiswaController extends Controller
     public function index_rekap_absen_siswa()
     {
         $rekapAbsensi = [];
-        $tanggal_awal = null;
+        $tanggalFormatted = null;
 
-        return view('admin.Absensi.absen_siswa.rekap_siswa', compact('rekapAbsensi', 'tanggal_awal'));
+        return view('admin.Absensi.absen_siswa.rekap_siswa', compact('rekapAbsensi', 'tanggalFormatted'));
     }
 
     public function rekap_absen_siswa(Request $request)
@@ -53,9 +53,13 @@ class AbsenSiswaController extends Controller
         // Tentukan rentang waktu dari input user
         $tanggal_awal = $request->input('tanggal_awal');
 
+        $tanggal = Carbon::createFromFormat('Y-m-d', $tanggal_awal);
+
+        $tanggalFormatted = $tanggal->isoFormat('D MMMM YYYY');
+
         $rekapAbsensi = $this->get_rekap_absen_siswa($tanggal_awal, $tanggal_hari_ini);
 
-        return view('admin.Absensi.absen_siswa.rekap_siswa', compact('rekapAbsensi', 'tanggal_awal'))->with('success', 'Berhasil menampilkan data rekap absensi!!');
+        return view('admin.Absensi.absen_siswa.rekap_siswa', compact('rekapAbsensi', 'tanggalFormatted'))->with('success', 'Berhasil menampilkan data rekap absensi!!');
     }
 
     private function get_rekap_absen_siswa($tanggal_awal, $tanggal_akhir)

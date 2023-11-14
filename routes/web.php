@@ -226,6 +226,9 @@ Route::middleware(['admin'])->group(function () {
     Route::get('/Export_excel_absen_kelas_4', [AbsenSiswaController::class, 'eksport_excel_kelas_4'])->name('eksport_excel_kelas_4');
 
     //Absen Guru
+    Route::post('/Absen_Guru_Rekap', [AbsenGuruController::class, 'rekap_absen_guru'])->name('rekap_absen_guru'); //halaman admin
+    Route::get('/Absen_Guru_Rekap', [AbsenGuruController::class, 'index_rekap_absen_guru'])->name('index_rekap_absen_guru'); //halaman admin
+
     Route::get('/Absen_Guru', [AbsenGuruController::class, 'index_absen_guru'])->name('index_absen_guru'); //halaman admin
     Route::get('/Export_excel_absen_guru', [AbsenGuruController::class, 'eksport_excel_absen_guru'])->name('eksport_excel_absen_guru');
     Route::get('/Absen_Guru/{data_absen_guru}/Detail_Absen', [AbsenGuruController::class, 'tampil_absen_guru'])->name('tampil_absen_guru');
